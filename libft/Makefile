@@ -12,7 +12,7 @@
 
 NAME		= libft.a
 HDRS		= libft.h
-TORM		= bonus
+TORM		= .bonus
 
 CC		= cc
 CFLAGS		= -Wall -Werror -Wextra
