@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 12:16:37 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/06/11 15:13:38 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/07/06 18:40:05 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ DEP		= $(addsuffix .d, $(basename $(OBJS)))
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC_DIR)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	$(MKDIR) $(dir $@)
 	$(CC) $(CFLAGS) -o $@ $<
 
@@ -56,7 +56,7 @@ all: make_libs $(NAME)
 make_libs:
 	make -C $(LIB_DIR)
 
-$(NAME): $(OBJS) $(LIBS) $(INC_DIR)
+$(NAME): $(OBJS) $(LIBS)
 	$(CP) $(LIBS) ./$(NAME)
 	$(AR) $(NAME) $(OBJS)
 
@@ -69,5 +69,7 @@ fclean:	clean
 	$(RM) $(NAME)
 
 re:	fclean	all
+
+-include $(DEF)
 
 .PHONY:	all clean fclean re make_libs
