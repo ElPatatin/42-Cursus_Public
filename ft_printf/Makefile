@@ -70,6 +70,8 @@ fclean:	clean
 
 re:	fclean	all
 
--include $(DEF)
+// This rule automaticatly look for all the dependencies in the lib
+// and redo all project if needed.
+-include $(DEP)
 
 .PHONY:	all clean fclean re make_libs
