@@ -10,15 +10,21 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libft.a
-HDRS		= libft.h
-TORM		= .bonus
+# -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-CC		= cc
+NAME		= libft.a
+
+# -=-=-=-=-	CMND -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+
 CFLAGS		= -Wall -Werror -Wextra
 NORM		= norminette -R CheckForbbiddenSourceHeader
 AR		= ar -rcs
 RM		= rm -f
+
+# -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+
+HDRS		= libft.h
+TORM		= .bonus
 
 SRCS		= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 	  			ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c \
@@ -35,6 +41,8 @@ BNUS		= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 				ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c $(SRCS)
 
 OBJSB		= $(BNUS:.c=.o)
+
+# -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 %.o: %.c $(HDRS)
 	$(CC) $(CFLAGS) -c $< -o $@

@@ -1,4 +1,4 @@
-# **************************************************************************** #
+ # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -11,7 +11,6 @@
 # **************************************************************************** #
 
 # -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
-
 
 NAME		= libftprintf.a
 
@@ -35,26 +34,26 @@ LIB_DIR	= libft/
 
 LIBS		= $(LIB_DIR)libft.a
 LIBS_HDRS	= -I $(LIB_DIR)libft.h
-INCLUDE		= -I $(INC_DIR) $(LIBS_HDRS)
+INCLUDE		= -I $(INC_DIR)ft_printf.h $(LIBS_HDRS)
 
 SRCS		= ft_printf.c \
 		ft_char_utils.c \
 		ft_nbrs_utils.c \
 		ft_vptr.c \
 
-OBJS		= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
+OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 DEP		= $(addsuffix .d, $(basename $(OBJS)))
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	$(MKDIR) $(dir $@)
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $< 
 
-all: make_libs $(NAME)
+all: make_lib $(NAME)
 
-make_libs:
-	make -C $(LIB_DIR)
+make_lib:
+	make bonus -C $(LIB_DIR)
 
 $(NAME): $(OBJS) $(LIBS)
 	$(CP) $(LIBS) ./$(NAME)
@@ -70,8 +69,6 @@ fclean:	clean
 
 re:	fclean	all
 
-// This rule automaticatly look for all the dependencies in the lib
-// and redo all project if needed.
 -include $(DEP)
 
-.PHONY:	all clean fclean re make_libs
+.PHONY:	all clean fclean re make_lib

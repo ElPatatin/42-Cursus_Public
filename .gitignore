@@ -9,3 +9,4 @@ out
 test.*
 main.c
 obj/
+.bonus
