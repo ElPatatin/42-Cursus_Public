@@ -14,14 +14,8 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <limits.h>
-# include "../libft/libft.h"
-
-# define TRUE	(int)1;
-# define FALSE	(int)0;
-
-typedef unsigned int		t_unt;
-typedef unsigned long long	t_unll;
+# include "../libft/inc/lib_ft.h"
+# include "../libft/inc/lib_list.h"
 
 typedef struct s_vars
 {

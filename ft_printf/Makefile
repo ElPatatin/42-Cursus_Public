@@ -53,7 +53,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 all: make_lib $(NAME)
 
 make_lib:
-	make bonus -C $(LIB_DIR)
+	make -C $(LIB_DIR)
 
 $(NAME): $(OBJS) $(LIBS)
 	$(CP) $(LIBS) ./$(NAME)

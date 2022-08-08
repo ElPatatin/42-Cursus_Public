@@ -49,10 +49,6 @@ STR_DIR	= ft_str/
 
 LST_DIR	= ft_list/
 
-PRN_DIR	= ft_printf/
-
-GNL_DIR	= ft_gnl/
-
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 HDRS	= $(INC_DIR)
@@ -91,10 +87,6 @@ LST_SRC	= ft_lstadd_back.c ft_lstadd_front.c ft_lstat.c ft_lstclear.c \
 		ft_lstpush_strs.c ft_lstremove_if.c ft_lstreverse.c ft_lstreverse_fun.c \
 		ft_lstsize.c ft_lstsort.c ft_lstsort_insert.c ft_lstswap.c
 
-PRN_SRC	= ft_printf.c ft_char_utils.c ft_nbrs_utils.c ft_ptr_utils.c
-
-GNL_SRC	= get_next_line.c
-
 SRCS	+= $(addprefix $(FIS_DIR), $(FIS_SRC))
 SRCS	+= $(addprefix $(MTH_DIR), $(MTH_SRC))
 SRCS	+= $(addprefix $(MEM_DIR), $(MEM_SRC))
@@ -102,8 +94,6 @@ SRCS	+= $(addprefix $(PUT_DIR), $(PUT_SRC))
 SRCS	+= $(addprefix $(SRT_DIR), $(SRT_SRC))
 SRCS	+= $(addprefix $(STR_DIR), $(STR_SRC))
 SRCS	+= $(addprefix $(LST_DIR), $(LST_SRC))
-SRCS	+= $(addprefix $(PRN_DIR), $(PRN_SRC))
-SRCS	+= $(addprefix $(GNL_DIR), $(GNL_SRC))
 
 OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 DEP		= $(addsuffix .d, $(basename $(OBJS)))
@@ -125,8 +115,6 @@ $(OBJF):
 	@$(MD) $(OBJ_DIR)$(SRT_DIR)
 	@$(MD) $(OBJ_DIR)$(STR_DIR)
 	@$(MD) $(OBJ_DIR)$(LST_DIR)
-	@$(MD) $(OBJ_DIR)$(PRN_DIR)
-	@$(MD) $(OBJ_DIR)$(GNL_DIR)
 	@touch $(OBJF)
 
 all: $(NAME)
