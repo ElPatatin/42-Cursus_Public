@@ -17,7 +17,19 @@
 # include <limits.h>
 # include "../libft/libft.h"
 
+# define TRUE	(int)1;
+# define FALSE	(int)0;
+
+typedef unsigned int		t_unt;
 typedef unsigned long long	t_unll;
+
+typedef struct s_vars
+{
+	ssize_t	idx;
+	ssize_t	bytes;
+	char	c;
+	va_list	args;
+}			t_vars;
 
 int	ft_printf(const char *fmt, ...);
 

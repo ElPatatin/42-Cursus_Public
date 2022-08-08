@@ -12,62 +12,49 @@
 
 #include "../inc/ft_printf.h"
 
-static int	ft_check(va_list args, char c)
+static int	ft_check(t_vars *vars)
 {
-	ssize_t	bytes;
-
-	bytes = 0;
-	if (c == '%')
-		bytes += ft_char('%');
-	if (c == 'c')
-		bytes += ft_char(va_arg(args, int));
-	if (c == 's')
-		bytes += ft_string(va_arg(args, char *));
-	if (c == 'd' || c == 'i')
-		bytes += ft_nbrbase(va_arg(args, int), 10, c);
-	if (c == 'u')
-		bytes += ft_nbrbase(va_arg(args, int), 10, c);
-	if (c == 'p')
-		bytes += ft_vptr(va_arg(args, t_unll));
-	if (c == 'x' || c == 'X')
-		bytes += ft_nbrbase(va_arg(args, unsigned int), 16, c);
-	return (bytes);
-}
-
-static int	ft_execute(const char *fmt, ssize_t i, ssize_t bytes, va_list args)
-{
-	char	c;
-
-	while (fmt[++i])
-	{
-		c = fmt[i + 1];
-		if (fmt[i] == '%')
-		{
-			bytes += ft_check(args, c);
-			if (bytes == -1)
-				return (-1);
-			i++;
-		}
-		else
-		{
-			bytes += ft_char(fmt[i]);
-			if (bytes == -1)
-				return (-1);
-		}
-	}
-	return (bytes);
+	if (vars->c == '%')
+		return (ft_char('%'));
+	if (vars->c == 'c')
+		return (ft_char(va_arg(vars->args, int)));
+	if (vars->c == 's')
+		return (ft_string(va_arg(vars->args, char *)));
+	if (vars->c == 'd' || vars->c == 'i')
+		return (ft_nbrbase(va_arg(vars->args, int), 10, vars->c));
+	if (vars->c == 'u')
+		return (ft_nbrbase(va_arg(vars->args, int), 10, vars->c));
+	if (vars->c == 'p')
+		return (ft_vptr(va_arg(vars->args, t_unll)));
+	if (vars->c == 'x' || vars->c == 'X')
+		return (ft_nbrbase(va_arg(vars->args, unsigned int), 16, vars->c));
+	return (0);
 }
 
 int	ft_printf(const char *fmt, ...)
 {
-	ssize_t	i;
-	ssize_t	bytes;
-	va_list	args;
+	t_vars	vars;
 
-	i = -1;
-	bytes = 0;
-	va_start(args, fmt);
-	bytes = ft_execute(fmt, i, bytes, args);
-	va_end(args);
-	return (bytes);
+	vars.idx = -1;
+	vars.bytes = 0;
+	va_start(vars.args, fmt);
+	while (fmt[++vars.idx])
+	{
+		vars.c = fmt[vars.idx + 1];
+		if (fmt[vars.idx] == '%')
+		{
+			vars.bytes += ft_check(&vars);
+			if (vars.bytes == -1)
+				return (-1);
+			vars.idx++;
+		}
+		else
+		{
+			vars.bytes += ft_char(fmt[vars.idx]);
+			if (vars.bytes == -1)
+				return (-1);
+		}
+	}
+	va_end(vars.args);
+	return (vars.bytes);
 }
