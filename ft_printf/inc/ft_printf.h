@@ -15,17 +15,26 @@
 
 # include <stdarg.h>
 # include "../libft/inc/lib_ft.h"
-# include "../libft/inc/lib_list.h"
 
 typedef struct s_vars
 {
 	ssize_t	idx;
 	ssize_t	bytes;
+	char	*str;
+	t_unt	i;
+	t_unt	minus;
+	t_unt	zero;
+	t_unt	dot;
+	t_unt	hastag;
+	t_unt	space;
+	t_unt	plus;
+	t_unt	width;
 	char	c;
 	va_list	args;
 }			t_vars;
 
 int	ft_printf(const char *fmt, ...);
+int	ft_check(t_vars *vars, const char *fmt);
 
 int	ft_char(int c);
 int	ft_string(char *str);

@@ -25,7 +25,7 @@ static char	*ft_setstring(char c)
 	return (NULL);
 }
 
-static int	ft_nbrlen(long nbr, int base, char c)
+static int	ft_nbrlen1(long nbr, int base, char c)
 {
 	int	len;
 
@@ -42,7 +42,7 @@ static int	ft_nbrlen(long nbr, int base, char c)
 	return (len);
 }
 
-static int	ft_putnbr(long nbr, int base, char c)
+static int	ft_putnbr1(long nbr, int base, char c)
 {
 	char	*str;
 
@@ -59,7 +59,7 @@ static int	ft_putnbr(long nbr, int base, char c)
 			nbr = UINT_MAX + nbr + 1;
 	}
 	if (nbr >= base)
-		if (ft_putnbr(nbr / base, base, c) == -1)
+		if (ft_putnbr1(nbr / base, base, c) == -1)
 			return (-1);
 	if (write(STDOUT_FILENO, &str[nbr % base], 1) != 1)
 		return (-1);
@@ -70,8 +70,8 @@ int	ft_nbrbase(int n, int base, char c)
 {
 	ssize_t	bytes;
 
-	bytes = ft_putnbr((long)n, base, c);
+	bytes = ft_putnbr1((long)n, base, c);
 	if (bytes == -1)
 		return (bytes);
-	return (ft_nbrlen((long)n, base, c));
+	return (ft_nbrlen1((long)n, base, c));
 }

@@ -12,25 +12,6 @@
 
 #include "../inc/ft_printf.h"
 
-static int	ft_check(t_vars *vars)
-{
-	if (vars->c == '%')
-		return (ft_char('%'));
-	if (vars->c == 'c')
-		return (ft_char(va_arg(vars->args, int)));
-	if (vars->c == 's')
-		return (ft_string(va_arg(vars->args, char *)));
-	if (vars->c == 'd' || vars->c == 'i')
-		return (ft_nbrbase(va_arg(vars->args, int), 10, vars->c));
-	if (vars->c == 'u')
-		return (ft_nbrbase(va_arg(vars->args, int), 10, vars->c));
-	if (vars->c == 'p')
-		return (ft_vptr(va_arg(vars->args, t_unll)));
-	if (vars->c == 'x' || vars->c == 'X')
-		return (ft_nbrbase(va_arg(vars->args, unsigned int), 16, vars->c));
-	return (0);
-}
-
 int	ft_printf(const char *fmt, ...)
 {
 	t_vars	vars;
@@ -43,7 +24,7 @@ int	ft_printf(const char *fmt, ...)
 		vars.c = fmt[vars.idx + 1];
 		if (fmt[vars.idx] == '%')
 		{
-			vars.bytes += ft_check(&vars);
+			vars.bytes += ft_check(&vars, fmt);
 			if (vars.bytes == -1)
 				return (-1);
 			vars.idx++;
