@@ -18,6 +18,7 @@ int	ft_printf(const char *fmt, ...)
 
 	vars.idx = -1;
 	vars.bytes = 0;
+	vars.str = (char *)fmt;
 	va_start(vars.args, fmt);
 	while (fmt[++vars.idx])
 	{
@@ -37,5 +38,6 @@ int	ft_printf(const char *fmt, ...)
 		}
 	}
 	va_end(vars.args);
+	ft_putnbr(vars.i);
 	return (vars.bytes);
 }

@@ -54,8 +54,12 @@ static int	ft_get_vars(t_vars *vars)
 
 int	ft_check(t_vars *vars, const char *fmt)
 {
-	(void) fmt;
+	(void)fmt;
 	while (ft_get_vars(vars) == 1)
-		vars->i = vars->i++;
+	{
+		vars->idx = vars->idx + 1;
+		vars->c = vars->str[vars->idx + 1];
+		vars->i = vars->i + 1;
+	}
 	return (ft_print_check(vars));
 }
