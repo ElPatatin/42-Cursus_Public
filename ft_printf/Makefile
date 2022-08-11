@@ -89,6 +89,7 @@ clean:
 fclean:	clean
 	@make fclean -C $(LIB_DIR)
 	@$(RM) $(NAME)
+	@$(RM) printf *.out
 	@echo ""
 	@echo "$(WHITE)	All objects, dependencies and executables removed.$(DEF_COLOR)"
 
