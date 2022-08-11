@@ -25,7 +25,7 @@ int	ft_printf(const char *fmt, ...)
 		vars.c = fmt[vars.idx + 1];
 		if (fmt[vars.idx] == '%')
 		{
-			vars.bytes += ft_check(&vars, fmt);
+			vars.bytes += ft_check(&vars);
 			if (vars.bytes == -1)
 				return (-1);
 			vars.idx++;
@@ -38,6 +38,5 @@ int	ft_printf(const char *fmt, ...)
 		}
 	}
 	va_end(vars.args);
-	ft_putnbr(vars.i);
 	return (vars.bytes);
 }

@@ -103,7 +103,7 @@ DEP		= $(addsuffix .d, $(basename $(OBJS)))
 OBJF	= .cache_exist
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
-	@echo "$(YELLOW)	Compiling: $< $(DEF_COLOR)"
+	@echo "$(MAGENTA)	Compiling: $(YELLOW)$< $(DEF_COLOR)"
 	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 $(OBJF):

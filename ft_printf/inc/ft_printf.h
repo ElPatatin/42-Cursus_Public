@@ -34,11 +34,13 @@ typedef struct s_vars
 }			t_vars;
 
 int	ft_printf(const char *fmt, ...);
-int	ft_check(t_vars *vars, const char *fmt);
+int	ft_check(t_vars *vars);
 
 int	ft_char(int c);
 int	ft_string(char *str);
 int	ft_nbrbase(int n, int base, char c);
 int	ft_vptr(t_unll arg);
+
+void ft_width(t_vars *vars);
 
 #endif
