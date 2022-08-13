@@ -12,6 +12,13 @@
 
 #include "../inc/ft_printf.h"
 
+int	ft_char(int c)
+{
+	if (write(STDOUT_FILENO, &c, sizeof(char)) != sizeof(char))
+		return (-1);
+	return (1);
+}
+
 int	ft_string(char	*str)
 {
 	unsigned int	i;
@@ -19,7 +26,7 @@ int	ft_string(char	*str)
 	i = 0;
 	if (!str)
 	{	
-		if (write(STDOUT_FILENO, "(null)", 6) != 6)
+		if (write(STDOUT_FILENO, NLL_MSG, 6) != 6)
 			return (-1);
 		return (6);
 	}
@@ -27,11 +34,4 @@ int	ft_string(char	*str)
 		if (write(STDOUT_FILENO, &str[i++], sizeof(char)) != sizeof (char))
 			return (-1);
 	return (ft_strlen(str));
-}
-
-int	ft_char(int c)
-{
-	if (write(STDOUT_FILENO, &c, sizeof(char)) != sizeof(char))
-		return (-1);
-	return (1);
 }

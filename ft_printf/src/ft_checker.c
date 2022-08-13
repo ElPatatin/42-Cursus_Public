@@ -12,6 +12,23 @@
 
 #include "../inc/ft_printf.h"
 
+int	ft_check(t_vars *vars)
+{
+	t_flags	flags;
+
+	while (ft_get_vars(vars, &flags) == 1)
+	{
+		vars->idx++;
+		vars->c = vars->str[vars->idx + 1];
+		vars->fcount++;
+	}
+	if (vars->str[vars->idx + 1] >= '1' && vars->str[vars->idx + 1] <= '9')
+		ft_width(vars, &flags);
+	if (flags.minus == 1)
+		return (vars->bytes);
+	return (ft_print_check(vars));
+}
+
 int	ft_print_check(t_vars *vars)
 {
 	if (vars->c == '%')
@@ -33,37 +50,21 @@ int	ft_print_check(t_vars *vars)
 	return (1);
 }
 
-static int	ft_get_vars(t_vars *vars)
+int	ft_get_vars(t_vars *vars, t_flags *flags)
 {
 	if (vars->c == '-')
-		vars->minus = 1;
+		flags->minus = 1;
 	else if (vars->c == '0')
-		vars->zero = 1;
+		flags->zero = 1;
 	else if (vars->c == '.')
-		vars->dot = 1;
+		flags->dot = 1;
 	else if (vars->c == '#')
-		vars->hastag = 1;
+		flags->hastag = 1;
 	else if (vars->c == ' ')
-		vars->space = 1;
+		flags->space = 1;
 	else if (vars->c == '+')
-		vars->plus = 1;
+		flags->plus = 1;
 	else
 		return (0);
 	return (1);
-}
-
-int	ft_check(t_vars *vars)
-{
-	vars->fcount = 0;
-	while (ft_get_vars(vars) == 1)
-	{
-		vars->idx++;
-		vars->c = vars->str[vars->idx + 1];
-		vars->fcount++;
-	}
-	if (vars->str[vars->idx + 1] >= '1' && vars->str[vars->idx + 1] <= '9')
-		ft_width(vars);
-	if (vars->minus == 1)
-		return (vars->bytes);
-	return (ft_print_check(vars));
 }

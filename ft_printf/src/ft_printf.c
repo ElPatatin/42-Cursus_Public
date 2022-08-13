@@ -12,13 +12,13 @@
 
 #include "../inc/ft_printf.h"
 
+static t_vars	ft_init_vars(const char *fmt);
+
 int	ft_printf(const char *fmt, ...)
 {
 	t_vars	vars;
 
-	vars.idx = -1;
-	vars.bytes = 0;
-	vars.str = (char *)fmt;
+	vars = ft_init_vars(fmt);
 	va_start(vars.args, fmt);
 	while (fmt[++vars.idx])
 	{
@@ -39,4 +39,15 @@ int	ft_printf(const char *fmt, ...)
 	}
 	va_end(vars.args);
 	return (vars.bytes);
+}
+
+static t_vars	ft_init_vars(const char *fmt)
+{
+	t_vars	vars;
+
+	vars.idx = -1;
+	vars.bytes = 0;
+	vars.str = (char *)fmt;
+	vars.fcount = 0;
+	return (vars);
 }
