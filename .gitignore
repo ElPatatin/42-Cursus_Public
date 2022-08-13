@@ -10,7 +10,6 @@
 obj/
 test/
 .out
-printf
 
 # Linker output
 *.ilk
