@@ -29,12 +29,14 @@ typedef struct s_vars
 	t_unt	space;
 	t_unt	plus;
 	t_unt	width;
+	t_unt	fcount;
 	char	c;
 	va_list	args;
 }			t_vars;
 
 int	ft_printf(const char *fmt, ...);
 int	ft_check(t_vars *vars);
+int	ft_print_check(t_vars *vars);
 
 int	ft_char(int c);
 int	ft_string(char *str);

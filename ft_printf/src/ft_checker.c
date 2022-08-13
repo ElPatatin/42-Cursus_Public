@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
-#include <stdio.h>
 
-static int	ft_print_check(t_vars *vars)
+int	ft_print_check(t_vars *vars)
 {
 	if (vars->c == '%')
 		return (ft_char('%'));
@@ -55,12 +54,16 @@ static int	ft_get_vars(t_vars *vars)
 
 int	ft_check(t_vars *vars)
 {
+	vars->fcount = 0;
 	while (ft_get_vars(vars) == 1)
 	{
 		vars->idx++;
 		vars->c = vars->str[vars->idx + 1];
+		vars->fcount++;
 	}
 	if (vars->str[vars->idx + 1] >= '1' && vars->str[vars->idx + 1] <= '9')
 		ft_width(vars);
+	if (vars->minus == 1)
+		return (vars->bytes);
 	return (ft_print_check(vars));
 }
