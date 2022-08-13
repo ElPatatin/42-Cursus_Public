@@ -26,15 +26,15 @@ int	ft_printf(const char *fmt, ...)
 		if (fmt[vars.idx] == '%')
 		{
 			vars.bytes += ft_check(&vars);
-			if (vars.bytes == -1)
-				return (-1);
+			if (vars.bytes == ERR_NUM)
+				return (ERR_NUM);
 			vars.idx++;
 		}
 		else
 		{
 			vars.bytes += ft_char(fmt[vars.idx]);
-			if (vars.bytes == -1)
-				return (-1);
+			if (vars.bytes == ERR_NUM)
+				return (ERR_NUM);
 		}
 	}
 	va_end(vars.args);

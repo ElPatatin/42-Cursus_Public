@@ -15,7 +15,7 @@
 int	ft_char(int c)
 {
 	if (write(STDOUT_FILENO, &c, sizeof(char)) != sizeof(char))
-		return (-1);
+		return (ERR_NUM);
 	return (1);
 }
 
@@ -27,11 +27,11 @@ int	ft_string(char	*str)
 	if (!str)
 	{	
 		if (write(STDOUT_FILENO, NLL_MSG, 6) != 6)
-			return (-1);
-		return (6);
+			return (ERR_NUM);
+		return (ft_strlen(NLL_MSG));
 	}
 	while (str[i])
 		if (write(STDOUT_FILENO, &str[i++], sizeof(char)) != sizeof (char))
-			return (-1);
+			return (ERR_NUM);
 	return (ft_strlen(str));
 }

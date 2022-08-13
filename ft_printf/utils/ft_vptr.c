@@ -39,14 +39,14 @@ static int	ft_ptr(t_unll nbr)
 		if (nbr <= 9)
 		{
 			bytes = ft_char(nbr + '0');
-			if (bytes == -1)
-				return (-1);
+			if (bytes == ERR_NUM)
+				return (ERR_NUM);
 		}
 		else
 		{
 			bytes = ft_char(nbr - 10 + 'a');
-			if (bytes == -1)
-				return (-1);
+			if (bytes == ERR_NUM)
+				return (ERR_NUM);
 		}
 	}
 	return (0);
@@ -63,14 +63,14 @@ int	ft_vptr(t_unll nbr)
 	if (nbr == 0)
 	{	
 		if (write(STDOUT_FILENO, "0", sizeof(char)) != sizeof(char))
-			return (-1);
+			return (ERR_NUM);
 		return (sizeof(char) + 2);
 	}
 	else
 	{
 		bytes = ft_ptr(nbr);
-		if (bytes == -1)
-			return (-1);
+		if (bytes == ERR_NUM)
+			return (ERR_NUM);
 	}
 	return (ft_ptrlen(nbr) + 2);
 }

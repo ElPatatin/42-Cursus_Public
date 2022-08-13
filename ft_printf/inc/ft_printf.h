@@ -16,7 +16,12 @@
 # include <stdarg.h>
 # include "../libft/inc/lib_ft.h"
 
+# define ERR_NUM	(int)-1
 # define NLL_MSG	(char *)"(null)"
+
+# define BASE10		(char *)"0123456789"
+# define BASE16L	(char *)"0123456789abcdef"
+# define BASE16U	(char *)"0123456789ABCDEF"
 
 typedef struct s_flags
 {
