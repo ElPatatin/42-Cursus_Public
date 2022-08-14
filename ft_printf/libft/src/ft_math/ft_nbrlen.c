@@ -12,7 +12,7 @@
 
 #include "../../inc/lib_ft.h"
 
-int	ft_nbrlen(t_unt nbr)
+int	ft_nbrlen(t_ll nbr)
 {
 	int	len;
 

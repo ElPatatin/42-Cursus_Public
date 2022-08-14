@@ -50,7 +50,7 @@ int		ft_prime(int nb);
 t_unt	ft_lcm(t_unt a, t_unt b);
 int		ft_find_next_prime(int nb);
 t_ll	ft_absval(t_ll n);
-int		ft_nbrlen(t_unt nbr);
+int		ft_nbrlen(t_ll nbr);
 int		ft_nbrlen_base(t_ll nbr, int base);
 int		ft_atoi(const char *str);
 int		ft_atoi_base(const char *str, int base);
