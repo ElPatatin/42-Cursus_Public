@@ -12,6 +12,8 @@
 
 #include "../inc/ft_printf.h"
 
+static int	ft_get_vars(t_vars *vars, t_flags *flags);
+
 int	ft_check(t_vars *vars)
 {
 	t_flags	flags;
@@ -50,7 +52,7 @@ int	ft_print_check(t_vars *vars)
 	return (1);
 }
 
-int	ft_get_vars(t_vars *vars, t_flags *flags)
+static int	ft_get_vars(t_vars *vars, t_flags *flags)
 {
 	if (vars->c == '-')
 		flags->minus = 1;

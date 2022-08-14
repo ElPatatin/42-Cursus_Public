@@ -39,6 +39,7 @@ typedef struct s_vars
 	ssize_t	bytes;
 	char	*str;
 	t_unt	fcount;
+	t_unt	wcount;
 	char	c;
 	va_list	args;
 }			t_vars;
@@ -49,7 +50,6 @@ int	ft_printf(const char *fmt, ...);
 // Funciones auxiliares del printf -> dirigen las inputs y las flags.
 int	ft_check(t_vars *vars);
 int	ft_print_check(t_vars *vars);
-int	ft_get_vars(t_vars *vars, t_flags *flags);
 
 // Utilidades del printf
 int	ft_char(int c);

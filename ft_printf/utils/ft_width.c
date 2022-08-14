@@ -13,14 +13,13 @@
 #include "../inc/ft_printf.h"
 #include <stdio.h>
 
+static int	ft_control(t_vars *vars);
+
 void ft_width(t_vars *vars, t_flags *flags)
 {
 	t_unt	i;
-	t_unt	j;
-	char	*s;
 
-	s = va_arg(vars->args, char *);
-	j = ft_strlen(s);
+	vars->wcount = ft_control(vars);
 	while (vars->str[vars->idx + 1] == '-')
 		vars->idx++;
 	i = ft_atoi(vars->str + (vars->idx + 1));
@@ -29,7 +28,7 @@ void ft_width(t_vars *vars, t_flags *flags)
 	if (flags->minus == 1)
 		vars->bytes += ft_print_check(vars);
 	if (vars->c == 's' || vars->c == 'c' || vars->c == '%')
-		while (i - j)
+		while (i - vars->wcount)
 		{
 			vars->bytes += write(STDOUT_FILENO, " ", sizeof(char));
 			--i;
@@ -40,4 +39,12 @@ void ft_width(t_vars *vars, t_flags *flags)
 			vars->bytes += write(STDOUT_FILENO, " ", sizeof(char));
 			--i;
 		}
+}
+
+static int	ft_control(t_vars *vars)
+{
+	  if (vars->c == '%' || vars->c == 'c' || vars->c == 's')
+		return (ft_strlen(vars->args));
+	else
+		return (ft_nbrlen(vars->args));
 }

@@ -49,5 +49,6 @@ static t_vars	ft_init_vars(const char *fmt)
 	vars.bytes = 0;
 	vars.str = (char *)fmt;
 	vars.fcount = 0;
+	vars.wcount = 0;
 	return (vars);
 }
