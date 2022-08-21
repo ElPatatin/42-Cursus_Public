@@ -44,7 +44,7 @@ void ft_width(t_vars *vars, t_flags *flags)
 static int	ft_control(t_vars *vars)
 {
 	  if (vars->c == '%' || vars->c == 'c' || vars->c == 's')
-		return (ft_strlen(vars->args));
+		return (ft_strlen(*vars->args));
 	else
-		return (ft_nbrlen(vars->args));
+		return (ft_nbrlen(*vars->args));
 }
