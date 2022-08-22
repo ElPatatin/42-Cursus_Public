@@ -45,7 +45,6 @@ LIB_DIR	= libft/
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 LIBS		= $(LIB_DIR)libft.a
-#LIB_FT		= -I $(LIB_DIR)$(INC_DIR)lib_ft.h
 INCLUDE		= -I $(INC_DIR)ft_printf.h
 
 PRT_SRC		= ft_printf.c \
@@ -89,7 +88,6 @@ clean:
 fclean:	clean
 	@make fclean -C $(LIB_DIR)
 	@$(RM) $(NAME)
-	@$(RM) printf *.out
 	@echo ""
 	@echo "$(WHITE)	All objects, dependencies and executables removed.$(DEF_COLOR)"
 
@@ -99,4 +97,4 @@ re:	fclean	all
 
 -include $(DEP)
 
-.PHONY:	all clean fclean re make_lib
+.PHONY:	all clean fclean re
