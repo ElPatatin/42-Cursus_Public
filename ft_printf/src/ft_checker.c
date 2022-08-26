@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 14:34:25 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/09 14:34:27 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/08/26 17:14:05 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int	ft_print_check(t_vars *vars)
 		return (ft_vptr(va_arg(vars->args, t_unll)));
 	else if (vars->c == 'x' || vars->c == 'X')
 		return (ft_nbrbase(va_arg(vars->args, unsigned int), 16, vars->c));
+	else if (vars->c == 'a')
+		return (ft_char("\a"));
 	else
 		return (0);
 	return (1);

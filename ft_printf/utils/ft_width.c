@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_width.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 14:34:49 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/09 14:34:52 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/08/26 17:11:32 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void ft_width(t_vars *vars, t_flags *flags)
 static int	ft_control(t_vars *vars)
 {
 	  if (vars->c == '%' || vars->c == 'c' || vars->c == 's')
-		return (ft_strlen(*vars->args));
+		return (ft_strlen(va_arg(vars->args, char *)));
 	else
-		return (ft_nbrlen(*vars->args));
+		return (ft_nbrlen(va_arg(vars->args, t_ll)));
 }
