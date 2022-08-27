@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:32:26 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/06/13 10:19:52 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/08/27 18:22:46 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,5 @@ static t_vars	ft_init_vars(const char *fmt)
 	vars.bytes = 0;
 	vars.str = (char *)fmt;
 	vars.fcount = 0;
-	vars.wcount = 0;
 	return (vars);
 }

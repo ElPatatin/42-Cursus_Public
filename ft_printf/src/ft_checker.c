@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 14:34:25 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/26 17:14:05 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/08/27 18:40:25 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ int	ft_check(t_vars *vars)
 		vars->fcount++;
 	}
 	if (vars->str[vars->idx + 1] >= '1' && vars->str[vars->idx + 1] <= '9')
+	{
+		if (flags.zero == 1)
+			ft_width_zero(vars, &flags);
 		ft_width(vars, &flags);
+	}
 	if (flags.minus == 1)
 		return (vars->bytes);
 	return (ft_print_check(vars));
@@ -48,7 +52,7 @@ int	ft_print_check(t_vars *vars)
 	else if (vars->c == 'x' || vars->c == 'X')
 		return (ft_nbrbase(va_arg(vars->args, unsigned int), 16, vars->c));
 	else if (vars->c == 'a')
-		return (ft_char("\a"));
+		return (ft_char('\a'));
 	else
 		return (0);
 	return (1);

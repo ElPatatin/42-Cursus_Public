@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:46:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/06/12 10:52:39 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/08/27 18:28:33 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ typedef struct s_vars
 	ssize_t	bytes;
 	char	*str;
 	t_unt	fcount;
-	t_unt	wcount;
 	char	c;
 	va_list	args;
 }			t_vars;
@@ -58,6 +57,7 @@ int	ft_nbrbase(int n, int base, char c);
 int	ft_vptr(t_unll arg);
 
 // Utilidades bonus del printf
-void ft_width(t_vars *vars,  t_flags *flags);
+void	ft_width(t_vars *vars,  t_flags *flags);
+void	ft_width_zero(t_vars *vars, t_flags *flags);
 
 #endif

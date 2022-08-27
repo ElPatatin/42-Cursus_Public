@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lib_ft.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:08:37 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/07/09 18:08:38 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/08/27 18:20:52 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		ft_prime(int nb);
 t_unt	ft_lcm(t_unt a, t_unt b);
 int		ft_find_next_prime(int nb);
 t_ll	ft_absval(t_ll n);
-int		ft_nbrlen(t_ll nbr);
+int		ft_nbrlen(int nbr);
 int		ft_nbrlen_base(t_ll nbr, int base);
 int		ft_atoi(const char *str);
 int		ft_atoi_base(const char *str, int base);
