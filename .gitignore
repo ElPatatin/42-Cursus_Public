@@ -8,7 +8,6 @@
 *.obj
 *.elf
 obj/
-test/
 .out
 
 # Linker output
@@ -56,7 +55,11 @@ test/
 *.cmd
 .tmp_versions/
 .DS_Store
+._.DS_Store
 modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+client
+server
+.minitalk
