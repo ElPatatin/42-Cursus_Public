@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:25:23 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/09/11 12:16:14 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/09/12 15:18:51 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	ft_message_handler(int pid, unsigned char msg)
 		{
 			if (kill(pid, SIGUSR1) == -1)
 				ft_error_handler(ERRCODE0);
-			pause();
+			usleep(500);
 		}
 		else
 		{
 			if (kill(pid, SIGUSR2) == -1)
 				ft_error_handler(ERRCODE0);
-			pause();
+			usleep(500);
 		}
 		usleep(150);
 		count >>= 1;
@@ -59,7 +59,7 @@ int	main(int ac, char **av)
 	signal(SIGUSR2, &ft_handler);
 	ft_send_message(ft_atoi(av[1]), av[2]);
 	while (TRUE)
-		pause();
+		usleep(500);
 	return (0);
 }
 
