@@ -6,14 +6,13 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 18:26:09 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/09/11 12:23:53 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/09/18 17:37:33 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-NAME		= .minitalk
-BNUS		= .minitalk_bonus
+NAME		= minitalk
 CLI_NAME	= client
 SRV_NAME	= server
 
@@ -77,12 +76,19 @@ $(OBJ_DIR)%.o: %.c Makefile
 
 all: makelib $(NAME)
 
-$(NAME): $(OBJ_CLI) $(OBJ_SRV) $(HDRS)
+$(NAME): $(CLI_NAME) $(SRV_NAME)
+	
+$(CLI_NAME): $(OBJ_CLI)
 	@$(CC) $(CFLAGS) $(XFLAGS) $(OBJ_CLI) $(LIBS) -o $(CLI_NAME)
 	@echo "$(CYAN)	Client side compiled!$(DEF_COLOR)"
+
+-include $(DEP_CLi) 
+
+$(SRV_NAME): $(OBJ_SRV)
 	@$(CC) $(CFLAGS) $(XFLAGS) $(OBJ_SRV) $(LIBS) -o $(SRV_NAME)
 	@echo "$(CYAN)	Server side compiled!$(DEF_COLOR)"
-	@touch $@
+
+-include $(DEP_SRV)
 
 makelib:
 	@make -C $(LIB_DIR)
@@ -100,7 +106,5 @@ fclean: clean
 re:	fclean	all
 	@echo ""
 	@echo "$(GREEN)	Cleaned and rebuilt everything for printf lib.$(DEF_COLOR)"
-
--include $(DEP_CLi) $(DEP_SRV)
 
 .PHONY:	all makelib clean fclean re

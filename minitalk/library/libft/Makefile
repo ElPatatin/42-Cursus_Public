@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 19:35:19 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/30 11:14:12 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/09/18 17:40:47 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,7 +96,7 @@ $(OBJ_DIR)%.o: $(SRCS_DIR)%.c Makefile
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBS)
+$(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
 	@echo "$(CYAN)	Function library 'libft' compiled!$(DEF_COLOR)"
 
