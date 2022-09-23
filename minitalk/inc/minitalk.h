@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:24:50 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/09/11 12:16:05 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/09/23 14:24:43 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@
 # define ERRCODE5	(int)5
 
 // Error Messages
-# define ERR_MSG	(char *)"%aError!\n"
-# define ERR_MSG1	(char *)"%aError! Invalid parameters given!\n"
-# define ERR_MSG2	(char *)"%aError! Invalid PID!\n"
+# define ERR_MSG	(char *)"\aError!\n"
+# define ERR_MSG1	(char *)"\aError! Invalid parameters given!\n"
+# define ERR_MSG2	(char *)"\aError! Invalid PID!\n"
 // Unsused
-# define ERR_MSG3	(char *)"%aError! Invalid message!\n"
-# define ERR_MSG4	(char *)"%aSomething went wrong while generating PID!\n"
+# define ERR_MSG3	(char *)"\aError! Invalid message!\n"
+# define ERR_MSG4	(char *)"\aSomething went wrong while generating PID!\n"
 // Pending to be implemented
-# define ERR_MSG5	(char *)"%aSomething went wrong with comms from server!\n"
+# define ERR_MSG5	(char *)"\aSomething went wrong with comms from server!\n"
 
 // Minitalk Utils
 void	ft_error_handler(int i);

@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 18:26:09 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/09/18 17:37:33 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/09/23 14:38:31 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@
 
 NAME		= minitalk
 CLI_NAME	= client
+CL2_NAME	= client2
 SRV_NAME	= server
 
 # -=-=-=-=-	CLRS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
@@ -52,17 +53,24 @@ INCLUDE	= -I $(INC_DIR)
 HDRS	= $(INC_DIR)minitalk.h
 
 CLI_SRC	= client.c
+CL2_SRC	= client2.c
 SRV_SRC	= server.c
 UTL_SRC	= minitalk_utils.c
 
 SRC_CLI	+= $(addprefix $(SRC_DIR), $(CLI_SRC))
 SRC_CLI	+= $(addprefix $(UTL_DIR), $(UTL_SRC))
 
+SRC_CL2	+= $(addprefix $(SRC_DIR), $(CL2_SRC))
+SRC_CL2	+= $(addprefix $(UTL_DIR), $(UTL_SRC))
+
 SRC_SRV	+= $(addprefix $(SRC_DIR), $(SRV_SRC))
 SRC_SRV	+= $(addprefix $(UTL_DIR), $(UTL_SRC))
 
 OBJ_CLI	= $(addprefix $(OBJ_DIR), $(SRC_CLI:.c=.o))
-DEP_CLi	= $(addsuffix .d, $(basename $(OBJ_CLI)))
+DEP_CLI	= $(addsuffix .d, $(basename $(OBJ_CLI)))
+
+OBJ_CL2	= $(addprefix $(OBJ_DIR), $(SRC_CL2:.c=.o))
+DEP_CL2	= $(addsuffic .d, $(basename $(OBJ_CL2)))
 
 OBJ_SRV	= $(addprefix $(OBJ_DIR), $(SRC_SRV:.c=.o))
 DEP_SRV	= $(addsuffix .d, $(basename $(OBJ_SRV)))
@@ -76,13 +84,19 @@ $(OBJ_DIR)%.o: %.c Makefile
 
 all: makelib $(NAME)
 
-$(NAME): $(CLI_NAME) $(SRV_NAME)
+$(NAME): $(CLI_NAME) $(CL2_NAME) $(SRV_NAME)
 	
 $(CLI_NAME): $(OBJ_CLI)
 	@$(CC) $(CFLAGS) $(XFLAGS) $(OBJ_CLI) $(LIBS) -o $(CLI_NAME)
 	@echo "$(CYAN)	Client side compiled!$(DEF_COLOR)"
 
--include $(DEP_CLi) 
+-include $(DEP_CLI)
+
+$(CL2_NAME): $(OBJ_CL2)
+	@$(CC) $(CFLAGS) $(XFLAGS) $(OBJ_CL2) $(LIBS) -o $(CL2_NAME)
+	@echo "$(GREEN)	Client side for files compiled!$(DEF_COLOR)"
+
+-include $(DEP_CL2)
 
 $(SRV_NAME): $(OBJ_SRV)
 	@$(CC) $(CFLAGS) $(XFLAGS) $(OBJ_SRV) $(LIBS) -o $(SRV_NAME)
@@ -100,7 +114,7 @@ clean:
 
 fclean: clean
 	@make fclean -C $(LIB_DIR)
-	@$(RM) $(CLI_NAME) $(SRV_NAME) $(NAME) $(BNUS)
+	@$(RM) $(CLI_NAME) $(CL2_NAME) $(SRV_NAME)
 	@echo "$(WHITE)	All objects, dependencies and executables removed.$(DEF_COLOR)"
 
 re:	fclean	all

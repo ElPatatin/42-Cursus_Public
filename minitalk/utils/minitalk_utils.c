@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:29:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/09/11 11:52:05 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/09/23 14:12:47 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_str_isdigit(char *str)
 {
 	while (*str)
 	{
-		if (ft_isdigit(*str) == 0)
+		if (!ft_isdigit(*str))
 			return (0);
 		str++;
 	}
