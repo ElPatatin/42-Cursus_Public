@@ -61,3 +61,6 @@ dkms.conf
 client
 server
 .minitalk
+client2
+push_swap
+checker
