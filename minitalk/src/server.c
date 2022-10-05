@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:25:38 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/09/12 15:17:59 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/09/30 16:47:17 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,10 @@ void	ft_message_handler(int signum, siginfo_t *siginfo, void *unused)
 	}
 }
 
-int	main(int ac, char **av)
+int	main(void)
 {
 	struct sigaction	catch;
 
-	(void)av;
-	if (ac != 1)
-		ft_error_handler(ERRCODE1);
 	ft_print_pid();
 	catch.sa_flags = SA_SIGINFO;
 	catch.sa_sigaction = ft_message_handler;

@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:25:23 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/09/23 14:28:56 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/06 01:46:44 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	ft_message_handler2(int pid, unsigned char msg)
 		{
 			if (kill(pid, SIGUSR1) == -1)
 				ft_error_handler(ERRCODE0);
-			usleep(150);
+			pause();
 		}
 		else
 		{
 			if (kill(pid, SIGUSR2) == -1)
 				ft_error_handler(ERRCODE0);
-			usleep(150);
+			pause();
 		}
 		usleep(150);
 		count >>= 1;

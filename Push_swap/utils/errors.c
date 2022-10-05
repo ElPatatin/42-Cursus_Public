@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 16:18:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/06 00:43:28 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/06 01:45:50 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ void
 	ft_error(int num)
 {
 	if (num == ERRCODE0)
-		write(2, ERR_MSG0, ft_strlen(ERR_MSG0));
+		write(STDERR_FILENO, ERR_MSG0, ft_strlen(ERR_MSG0));
 	else if (num == ERRCODE1)
-		write(2, ERR_MSG1, ft_strlen(ERR_MSG1));
+		write(STDERR_FILENO, ERR_MSG1, ft_strlen(ERR_MSG1));
 	else if (num == ERRCODE2)
-		write(2, ERR_MSG2, ft_strlen(ERR_MSG2));
+		write(STDERR_FILENO, ERR_MSG2, ft_strlen(ERR_MSG2));
 	else if (num == ERRCODE3)
-		write(2, ERR_MSG3, ft_strlen(ERR_MSG3));
+		write(STDERR_FILENO, ERR_MSG3, ft_strlen(ERR_MSG3));
 	exit(EXIT_FAILURE);
 }

@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:29:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/09/23 14:12:47 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/09/30 16:45:12 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_handler(int sig)
 {
 	if (sig == SIGUSR1)
 	{
-		usleep(100);
+		usleep(50);
 		ft_printf("%s", VLD_MSG1);
 	}
 	else if (sig == SIGUSR2)
