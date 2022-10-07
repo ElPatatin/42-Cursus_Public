@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_absval.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 19:59:37 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:28:54 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:53:57 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-t_ll	ft_absval(t_ll n)
+t_ll
+	ft_absval(t_ll n)
 {
 	if (n < 0)
 		n = -n;

@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:21:53 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:28:41 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:50:56 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	ft_islower(int c)
+int
+	ft_islower(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
+		return (TRUE);
+	return (FALSE);
 }

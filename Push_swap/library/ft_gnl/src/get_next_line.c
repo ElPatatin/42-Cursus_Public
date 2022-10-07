@@ -6,13 +6,36 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:35:34 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/05 18:55:25 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:44:30 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libgnl.h"
 
-char	*ft_read_save(int fd, char *buffer)
+char
+	*get_next_line(int fd)
+{
+	static char	*buffer[FOPEN_MAX];
+	char		*line;
+
+	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE <= 0)
+		return (NULL);
+	if (!buffer[fd])
+	{
+		buffer[fd] = ft_strdup("");
+		if (!buffer[fd])
+			return (NULL);
+	}
+	buffer[fd] = ft_read_save(fd, buffer[fd]);
+	if (!buffer[fd])
+		return (NULL);
+	line = ft_get_line(buffer[fd]);
+	buffer[fd] = ft_save(buffer[fd]);
+	return (line);
+}
+
+char
+	*ft_read_save(int fd, char *buffer)
 {
 	char	*buff;
 	int		reading;
@@ -38,7 +61,8 @@ char	*ft_read_save(int fd, char *buffer)
 	return (buffer);
 }
 
-char	*ft_get_line(char *buffer)
+char
+	*ft_get_line(char *buffer)
 {
 	int		i;
 	char	*str;
@@ -66,7 +90,8 @@ char	*ft_get_line(char *buffer)
 	return (str);
 }
 
-char	*ft_save(char *buffer)
+char
+	*ft_save(char *buffer)
 {
 	int		i;
 	int		c;
@@ -93,25 +118,4 @@ char	*ft_save(char *buffer)
 	str[c] = '\0';
 	free(buffer);
 	return (str);
-}
-
-char	*get_next_line(int fd)
-{
-	static char	*buffer[OPEN_MAX];
-	char		*line;
-
-	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0)
-		return (NULL);
-	if (!buffer[fd])
-	{
-		buffer[fd] = ft_strdup("");
-		if (!buffer[fd])
-			return (NULL);
-	}
-	buffer[fd] = ft_read_save(fd, buffer[fd]);
-	if (!buffer[fd])
-		return (NULL);
-	line = ft_get_line(buffer[fd]);
-	buffer[fd] = ft_save(buffer[fd]);
-	return (line);
 }

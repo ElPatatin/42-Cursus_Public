@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:54:44 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:40 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 06:00:19 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	ft_putstr_fd(char	*str, int fd)
+int
+	ft_putstr_fd(char	*str, int fd)
 {
 	unsigned int	i;
 

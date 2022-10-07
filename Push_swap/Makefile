@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/10 19:49:08 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/10/05 19:55:28 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/07 09:12:28 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@
 
 NAME		= push_swap
 BNUS		= checker
+MKFL		= Makefile
 
 # -=-=-=-=-	CLRS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -100,24 +101,22 @@ DEPS_BNUS	= $(addsuffix .d, $(basename $(OBJS_BNUS)))
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-$(OBJ_DIR)%.o: %.c Makefile
+$(OBJ_DIR)%.o: %.c $(MKFL)
 	@$(MD) $(dir $@)
-	@echo "$(GREEN)	Compiling: $(YELLOW)$< $(DEF_COLOR)"
+	@printf "\r$(GREEN)\tCompiling: $(YELLOW)$< $(DEF_COLOR)                   \r"
 	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) $(INCLUDE_B) -c $< -o $@
 
 all: makelib $(NAME)
 
 $(NAME): $(OBJS)
-	@echo ""
 	@$(CC) $(CFLAGS) $(XFLAGS) $(OBJS) $(LIBS) -o $(NAME)
-	@echo "	$(WHITE)Program \033[1;31mPush Swap $(WHITE)has been compiled!"
+	@printf "\n\t$(WHITE)Program \033[1;31mPush Swap $(WHITE)has been compiled!\n"
 
 bonus: makelib $(BNUS)
 
 $(BNUS): $(OBJS_BNUS)
-	@echo ""
 	@$(CC) $(CFLAGS) $(XFLAGS) $(OBJS_BNUS) $(LIBS) -o $(BNUS)
-	@echo "	$(WHITE)Program \033[1;31mChecker $(WHITE)has been compiled!"
+	@printf "\r\n\t$(WHITE)Program \033[1;31mChecker $(WHITE)has been compiled!\n"
 
 makelib:
 	@make -C $(LIB_DIR)

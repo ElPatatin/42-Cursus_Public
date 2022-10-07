@@ -6,25 +6,23 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/10/05 19:51:30 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/07 06:49:56 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-NAME	=	lib.a
+NAME	= lib.a
 
 # -=-=-=-=-	CMND -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-CFLAGS		= -Wall -Werror -Wextra
-AR		= ar -rcs
+CFLAGS	= -Wall -Werror -Wextra
 RM		= rm -f
-MD		= mkdir -p
 CP		= cp -f
-MV		= mv -f
 
 # -=-=-=-=-	PATH -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
+LIBRARY	= library/
 LIB_DIR	= libft/
 PNT_DIR	= ft_printf/
 GNL_DIR	= ft_gnl/
@@ -33,12 +31,17 @@ GNL_DIR	= ft_gnl/
 
 LIBFT	= $(LIB_DIR)libft.a
 PRINTF	= $(PNT_DIR)libprintf.a
-GETNL	= $(GNL_DIR)libgnl.a
+FUNGNL	= $(GNL_DIR)libgnl.a
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 all: makelibft makeprintf makegnl
-	
+
+libft: makelibft
+
+printf: makelibft makeprintf
+
+gnl: makelibft makegnl
 
 #-=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=- #
 
@@ -52,15 +55,14 @@ makeprintf:
 
 makegnl:
 	@make -C $(GNL_DIR)
-	@$(CP) $(GETNL) ./$(NAME)
+	@$(CP) $(FUNGNL) ./$(NAME)
 
 clean:
-	@$(RM) -r $(OBJ_DIR)
 	@make clean -C $(LIB_DIR)
 	@make clean -C $(PNT_DIR)
 	@make clean -C $(GNL_DIR)
 
-fclean:
+fclean: clean
 	@$(RM) $(NAME) ./*.out
 	@make fclean -C $(LIB_DIR)
 	@make fclean -C $(PNT_DIR)
@@ -68,4 +70,4 @@ fclean:
 
 re: fclean all
 
-.PHONY:	all clean fclean re
+.PHONY:	all libft printf gnl clean fclean re

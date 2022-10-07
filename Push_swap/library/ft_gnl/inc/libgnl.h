@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libgnl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:11:01 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 22:58:10 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 06:51:52 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_save_buff(char *buff);
 char	*ft_get_line(char *buff);
 char	*ft_read_save(int fd, char *buff);
+char	*ft_save(char *buff);
 
 #endif

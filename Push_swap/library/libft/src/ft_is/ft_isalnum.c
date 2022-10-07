@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:51:37 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:28:23 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:50:13 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	ft_isalnum(int c)
+int
+	ft_isalnum(int c)
 {
-	if ((c >= '0' && c <= '9')
-		|| ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
-		return (1);
-	return (0);
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (TRUE);
+	return (FALSE);
 }
 
 /*										*/

@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:00:48 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/04 17:39:10 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 10:20:50 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ static void
 	else if (a->len == 5)
 		ft_sort_five(a, b);
 	else if (a->len <= 20)
-		ft_sort_number(a, b, 2);
+		ft_sort_bigger(a, b, 2);
 	else if (a->len <= 150)
-		ft_sort_number(a, b, 10);
+		ft_sort_bigger(a, b, 4);
 	else
 		ft_sort_bigger(a, b, 8);
 }

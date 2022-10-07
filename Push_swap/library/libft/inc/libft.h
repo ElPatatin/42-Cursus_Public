@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:08:37 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/09/21 15:37:37 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:52:27 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdio.h>
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <sys/errno.h>
 # include <sys/wait.h>
 
-# define TRUE   (int)1
-# define FALSE  (int)0
+# define TRUE	(int)1
+# define FALSE	(int)0
 # define UNUSED	(void)
 
 typedef unsigned long long	t_unll;
@@ -33,14 +34,15 @@ typedef long long			t_ll;
 typedef unsigned int		t_unt;
 
 // FT_is functions. Return 1 if true, return 0 if false
+int		ft_isupper(int c);
+int		ft_islower(int c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
-int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_isspace(int c);
-int		ft_isupper(int c);
-int		ft_islower(int c);
+int		ft_issign(int c);
+int		ft_isascii(int c);
 
 // FT_math functions. Multiple purpouse functions for operations.
 t_ll	ft_pow(t_ll n, t_unt pow);
@@ -52,7 +54,7 @@ int		ft_find_next_prime(int nb);
 t_ll	ft_absval(t_ll n);
 int		ft_nbrlen(t_ll nbr);
 int		ft_nbrlen_base(t_ll nbr, int base);
-t_ll	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 int		ft_atoi_base(const char *str, int base);
 char	*ft_itoa(int nbr);
 char	*ft_itoa_base(int nbr, int base);

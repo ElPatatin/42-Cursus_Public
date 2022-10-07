@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_nbrlen_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 20:00:24 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:29:21 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:56:33 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	ft_nbrlen_base(t_ll nbr, int base)
+int
+	ft_nbrlen_base(t_ll nbr, int base)
 {
 	int	len;
 

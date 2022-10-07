@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 18:26:09 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/09/23 14:38:31 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/06 13:04:04 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,7 @@ $(CLI_NAME): $(OBJ_CLI)
 
 $(CL2_NAME): $(OBJ_CL2)
 	@$(CC) $(CFLAGS) $(XFLAGS) $(OBJ_CL2) $(LIBS) -o $(CL2_NAME)
-	@echo "$(GREEN)	Client side for files compiled!$(DEF_COLOR)"
+	@echo "$(CYAN)	Client side for files compiled!$(DEF_COLOR)"
 
 -include $(DEP_CL2)
 

@@ -6,13 +6,14 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 19:35:19 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/09/18 17:31:06 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/07 07:10:24 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 NAME		= libft.a
+MKFL		= Makefile
 
 # -=-=-=-=-	CLRS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -28,7 +29,7 @@ WHITE		:= \033[0;97m
 
 # -=-=-=-=-	CMND -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-CFLAGS	= -Wall -Werror -Wextra -g
+CFLAGS	= -Wall -Werror -Wextra -W -O3 -Ofast
 AR		= ar rcs
 RM		= rm -f
 MD		= mkdir -p
@@ -52,7 +53,8 @@ STR_DIR	= $(SRC_DIR)ft_str/
 INCLUDE		= -I $(INC_DIR)
 
 FIS_SRC	= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
-		ft_islower.c ft_isupper.c ft_isprint.c ft_isspace.c
+		ft_islower.c ft_isprint.c ft_issign.c ft_isspace.c \
+		ft_isupper.c
 
 MTH_SRC	= ft_absval.c ft_atoi.c ft_atoi_base.c ft_factorial.c \
 		ft_find_next_prime.c ft_itoa.c ft_itoa_base.c ft_lcm.c \
@@ -89,18 +91,16 @@ DEPS	= $(addsuffix .d, $(basename $(OBJS)))
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-$(OBJ_DIR)%.o: $(SRCS_DIR)%.c Makefile
+$(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(MKFL)
 	@$(MD) $(dir $@)
-	@echo "$(WHITE)	Compiling: $(YELLOW)$< $(DEF_COLOR)"
+	@printf "$(WHITE)\r\tCompiling: $(YELLOW)$<$(DEF_COLOR)                           \r"
 	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
-	@echo "$(CYAN)	Function library 'libft' compiled!$(DEF_COLOR)"
-
--include $(DEPS)
+	@printf "$(CYAN)\n\tFunction library $(GREEN)'libft'$(CYAN) has been compiled!\n$(DEF_COLOR)"
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
@@ -113,5 +113,7 @@ fclean:	clean
 re:	fclean	all
 	@echo ""
 	@echo "$(GREEN)	Cleaned and rebuilt everything for libft.$(DEF_COLOR)"
+
+-include $(DEPS)
 
 .PHONY:	all clean fclean re

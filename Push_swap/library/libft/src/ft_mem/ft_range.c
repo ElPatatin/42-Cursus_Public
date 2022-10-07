@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:13:40 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:12 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:58:45 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	*ft_range(int min, int max)
+int
+	*ft_range(int min, int max)
 {
 	int	*tab;
 	int	i;

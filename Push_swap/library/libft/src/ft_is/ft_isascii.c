@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:02:43 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:28:35 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:50:49 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	ft_isascii(int c)
+int
+	ft_isascii(int c)
 {
-	if (!((c >= 0) && (c <= 127)))
-		return (0);
-	return (1);
+	if (c >= 0 && c <= 127)
+		return (TRUE);
+	return (FALSE);
 }
 
 /*										*/

@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:11:46 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:29:56 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:58:03 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void
+	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 

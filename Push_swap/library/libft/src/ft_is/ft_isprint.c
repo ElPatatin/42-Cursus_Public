@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:07:14 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:28:44 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:51:15 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	ft_isprint(int c)
+int
+	ft_isprint(int c)
 {
-	if (!(c >= 32 && c <= 126))
-		return (0);
-	return (1);
+	if (c >= 32 && c <= 126)
+		return (TRUE);
+	return (FALSE);
 }
 
 /*										*/

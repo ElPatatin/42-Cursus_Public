@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:54:03 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:38 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 06:00:16 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	ft_putnbr(t_ll nbr)
+int
+	ft_putnbr(t_ll nbr)
 {
 	char	*str;
 

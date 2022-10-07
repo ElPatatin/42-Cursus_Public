@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rrange.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:41:22 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:08 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:58:51 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	*ft_rrange(int start, int end)
+int
+	*ft_rrange(int start, int end)
 {
 	int	nbrcount;
 	int	*ptr;
