@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:13:53 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 10:20:31 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/09 00:23:09 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 static void	ft_sort_aux(t_stack *a, t_stack *b, int cut);
 static void	ft_at_b_stack(t_stack *b, int idx, int cut);
 static void	ft_backto_a(t_stack *a, t_stack *b);
+static int	ft_get_maxidx(t_stack *stack);
 
 void
 	ft_sort_bigger(t_stack *a, t_stack *b, int chunks)
@@ -78,4 +79,23 @@ static void
 {
 	if (idx < cut / 2)
 		ft_rb(b);
+}
+
+static int
+	ft_get_maxidx(t_stack *stack)
+{
+	t_elems	*tmp;
+	int		idx;
+
+	tmp = stack->first;
+	idx = stack->len - 1;
+	while (tmp->next)
+	{
+		if (tmp->idx == (idx + 1))
+			return (stack->len);
+		tmp = tmp->next;
+	}
+	if (tmp->idx == (idx + 1))
+		return (stack->len);
+	return (idx);
 }

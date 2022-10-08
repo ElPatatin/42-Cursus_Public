@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:12:42 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/06 16:36:34 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/09 00:21:49 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static int	ft_check_isdigit(int nbr, char **str);
 static int	ft_check_dups(int nbr, char **str);
-// static int	ft_check_order(int nbr, char **str);
 
 void
 	ft_check_valid_params(int nbr, char **str)

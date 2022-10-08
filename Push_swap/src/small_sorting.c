@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 16:05:43 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 09:27:39 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/09 00:25:12 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,23 +63,4 @@ void
 	ft_sort_three(a);
 	ft_pa(a, b);
 	ft_pa(a, b);
-}
-
-int
-	ft_get_maxidx(t_stack *stack)
-{
-	t_elems	*tmp;
-	int		idx;
-
-	tmp = stack->first;
-	idx = stack->len - 1;
-	while (tmp->next)
-	{
-		if (tmp->idx == (idx + 1))
-			return (stack->len);
-		tmp = tmp->next;
-	}
-	if (tmp->idx == (idx + 1))
-		return (stack->len);
-	return (idx);
 }

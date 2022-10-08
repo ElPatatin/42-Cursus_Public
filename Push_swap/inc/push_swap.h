@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:00:33 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 10:20:39 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/09 00:23:44 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define ERRCODE3	(int)3
 
 // Error Messages
-# define ERR_MSG0	(char *)"Error\n"
+# define ERR_MSG0	(char *)"\aError\n"
 # define ERR_MSG1	(char *)"\aError! Not a valid input.\n"
 # define ERR_MSG2	(char *)"\aError! Failed a node creation.\n"
 # define ERR_MSG3	(char *)"\aError! Failed when making a move.\n"
@@ -63,7 +63,6 @@ void	ft_indexer(t_stack *stack);
 void	ft_sort_three(t_stack *a);
 void	ft_sort_four(t_stack *a, t_stack *b);
 void	ft_sort_five(t_stack *a, t_stack *b);
-int		ft_get_maxidx(t_stack *stack);
 
 // Chunk sorting
 void	ft_sort_bigger(t_stack *a, t_stack *b, int chunks);
