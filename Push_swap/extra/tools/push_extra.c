@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_bonus.c                                       :+:      :+:    :+:   */
+/*   push_extra.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:40:29 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/05 19:08:09 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/15 10:19:20 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap_bonus.h"
-#include "../inc/moves_bonus.h"
+#include "../inc/push_swap_extra.h"
+#include "../inc/moves_extra.h"
 
 static void
 	ft_push_src(t_stack *src, t_elems *tmp)

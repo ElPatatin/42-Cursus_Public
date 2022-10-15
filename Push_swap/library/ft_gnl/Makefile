@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 22:52:56 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/10/07 07:10:35 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/15 10:14:15 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,22 +60,29 @@ $(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(MKFL)
 	@printf "$(WHITE)\r\tCompiling: $(YELLOW)$<$(DEF_COLOR)                           \r"
 	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-all: $(NAME)
+all:
+	@$(MAKE)  $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME):: $(OBJS)
 	@$(CP) $(LIBS) ./$(NAME)
 	@$(AR) $(NAME) $(OBJS)
 	@printf "$(CYAN)\n\tThe function $(GREEN)'Get Next Line'$(CYAN) has been compiled!\n$(DEF_COLOR)"
+
+$(NAME)::
+	@printf "\t$(WHITE)Nothing more to be done for library \033[1;31m$(NAME)\n"
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
 	@echo "$(BLUE)	Get Next Line object files cleaned.$(DEF_COLOR)"
 
-fclean:	clean
+fclean:
+	@$(MAKE) clean
 	@$(RM) $(NAME)
 	@echo "$(WHITE)	All objects, dependencies and executables removed.$(DEF_COLOR)"
 
-re:	fclean	all
+re:
+	@$(MAKE) fclean
+	@$(MAKE) all
 	@echo ""
 	@echo "$(GREEN)	Cleaned and rebuilt everything for Get Next Line.$(DEF_COLOR)"
 

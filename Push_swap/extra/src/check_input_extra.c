@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_bonus.c                                :+:      :+:    :+:   */
+/*   check_input_extra.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:12:42 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/09 00:21:49 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/15 10:17:32 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap_bonus.h"
+#include "../inc/push_swap_extra.h"
 
 static int	ft_check_isdigit(int nbr, char **str);
 static int	ft_check_dups(int nbr, char **str);

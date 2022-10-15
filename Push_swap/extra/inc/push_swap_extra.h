@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*   push_swap_extra.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:00:33 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/09 00:23:28 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/15 10:17:12 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_BONUS_H
-# define PUSH_SWAP_BONUS_H
+#ifndef PUSH_SWAP_EXTRA_H
+# define PUSH_SWAP_EXTRA_H
 
 # include "../../library/libft/inc/libft.h"
 # include "../../library/ft_printf/inc/ft_printf.h"

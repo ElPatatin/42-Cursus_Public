@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 12:16:37 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/10/07 09:47:22 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/15 10:13:36 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,22 +66,29 @@ $(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(MKFL)
 	@printf "$(WHITE)\r\tCompiling: $(YELLOW)$<$(DEF_COLOR)                           \r"
 	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-all: $(NAME)
+all:
+	@$(MAKE) $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME):: $(OBJS)
 	@$(CP) $(LIBS) ./$(NAME)
 	@$(AR) $(NAME) $(OBJS)
 	@printf "$(CYAN)\n\tThe library $(GREEN)'printf'$(CYAN) has been compiled!\n$(DEF_COLOR)"
+
+$(NAME)::
+	@printf "\t$(WHITE)Nothing more to be done for library \033[1;31m$(NAME)\n"
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
 	@echo "$(BLUE)	Printf object files cleaned.$(DEF_COLOR)"
 
-fclean:	clean
+fclean:
+	@$(MAKE) clean
 	@$(RM) $(NAME)
 	@echo "$(WHITE)	All objects, dependencies and executables removed.$(DEF_COLOR)"
 
 re:	fclean	all
+	@$(MAKE) fclean
+	@$(MAKE) all
 	@echo ""
 	@echo "$(GREEN)	Cleaned and rebuilt everything for printf lib.$(DEF_COLOR)"
 

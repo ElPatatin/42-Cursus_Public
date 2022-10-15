@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors_bonus.c                                     :+:      :+:    :+:   */
+/*   errors_extra.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 16:18:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/06 01:42:30 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/15 10:20:21 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap_bonus.h"
+#include "../inc/push_swap_extra.h"
 
 void
 	ft_stackclear(t_stack *stack)

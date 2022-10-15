@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_bonus.c                                    :+:      :+:    :+:   */
+/*   checker_extra.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 15:43:19 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/05 19:24:31 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/15 10:21:13 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap_bonus.h"
-#include "../inc/moves_bonus.h"
+#include "../inc/push_swap_extra.h"
+#include "../inc/moves_extra.h"
 
 static void	ft_read_commands(t_stack *a, t_stack *b);
 static int	ft_check_moves(char *line, t_stack *a, t_stack *b);
@@ -54,6 +54,8 @@ static void
 	{
 		if (!ft_check_moves(line, a, b))
 			ft_cleanall(a, b, &line);
+		free(line);
+		line = NULL;
 		line = get_next_line(0);
 	}
 	free(line);

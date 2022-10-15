@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_bonus.h                                      :+:      :+:    :+:   */
+/*   moves_extra.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 19:31:21 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/05 16:05:33 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/15 10:16:52 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MOVES_BONUS_H
-# define MOVES_BONUS_H
+#ifndef MOVES_EXTRA_H
+# define MOVES_EXTRA_H
 
 // Instructions
 # define INS_PA		(char *)"pa\n"

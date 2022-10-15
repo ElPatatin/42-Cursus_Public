@@ -6,14 +6,14 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/10 19:49:08 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/10/07 09:12:28 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/15 10:26:45 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 NAME		= push_swap
-BNUS		= checker
+CHKR		= checker
 MKFL		= Makefile
 
 # -=-=-=-=-	CLRS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
@@ -44,8 +44,10 @@ SRC_DIR	= src/
 UTL_DIR	= utils/
 TUL_DIR	= tools/
 OBJ_DIR	= obj/
-BNS_DIR	= bonus/
+CHK_DIR	= extra/
 LIB_DIR	= library/
+
+DEP_LIB	= $(LIB_DIR)*/$(OBJ_DIR)$(SRC_DIR)*/*.o
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -75,67 +77,77 @@ SRCS	+= $(addprefix $(TUL_DIR), $(TUL_PSH))
 OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 DEPS	= $(addsuffix .d, $(basename $(OBJS)))
 
-# -=-=-=-=-	BNUS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+# -=-=-=-=-	CHKR -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-HDRS_BNUS	= $(BNS_DIR)$(INC_DIR)push_swap.h $(BNS_DIR)$(INC_DIR)moves.h
-INCLUDE_B	= -I $(BNS_DIR)$(INC_DIR)
+HDRS_CHKR	= $(CHK_DIR)$(INC_DIR)push_swap_extra.h $(CHK_DIR)$(INC_DIR)moves_extra.h
+INCLUDE_B	= -I $(CHK_DIR)$(INC_DIR)
 
-SRC_BNS	= checker_bonus.c \
-		check_input_bonus.c \
-		init_stacks_bonus.c
+SRC_CHK	= checker_extra.c \
+		check_input_extra.c \
+		init_stacks_extra.c
 
-UTL_BNS = push_swap_utils_bonus.c \
-		errors_bonus.c
+UTL_CHK = push_swap_utils_extra.c \
+		errors_extra.c
 
-TUL_BNS	= push_bonus.c \
-		swap_bonus.c \
-		rotate_bonus.c \
-		rrotate_bonus.c
+TUL_CHK	= push_extra.c \
+		swap_extra.c \
+		rotate_extra.c \
+		rrotate_extra.c
 
-SRCS_BNUS	+= $(addprefix $(BNS_DIR), $(addprefix $(SRC_DIR), $(SRC_BNS)))
-SRCS_BNUS	+= $(addprefix $(BNS_DIR), $(addprefix $(UTL_DIR), $(UTL_BNS)))
-SRCS_BNUS	+= $(addprefix $(BNS_DIR), $(addprefix $(TUL_DIR), $(TUL_BNS)))
+SRCS_CHKR	+= $(addprefix $(CHK_DIR), $(addprefix $(SRC_DIR), $(SRC_CHK)))
+SRCS_CHKR	+= $(addprefix $(CHK_DIR), $(addprefix $(UTL_DIR), $(UTL_CHK)))
+SRCS_CHKR	+= $(addprefix $(CHK_DIR), $(addprefix $(TUL_DIR), $(TUL_CHK)))
 
-OBJS_BNUS	= $(addprefix $(OBJ_DIR), $(SRCS_BNUS:.c=.o))
-DEPS_BNUS	= $(addsuffix .d, $(basename $(OBJS_BNUS)))
+OBJS_CHKR	= $(addprefix $(OBJ_DIR), $(SRCS_CHKR:.c=.o))
+DEPS_CHKR	= $(addsuffix .d, $(basename $(OBJS_CHKR)))
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-$(OBJ_DIR)%.o: %.c $(MKFL)
+$(OBJ_DIR)%.o: %.c $(MKFL) $(DEP_LIB)
 	@$(MD) $(dir $@)
 	@printf "\r$(GREEN)\tCompiling: $(YELLOW)$< $(DEF_COLOR)                   \r"
 	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) $(INCLUDE_B) -c $< -o $@
 
-all: makelib $(NAME)
+all:
+	@$(MAKE) -C $(LIB_DIR)
+	@$(MAKE) $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME):: $(OBJS)
 	@$(CC) $(CFLAGS) $(XFLAGS) $(OBJS) $(LIBS) -o $(NAME)
 	@printf "\n\t$(WHITE)Program \033[1;31mPush Swap $(WHITE)has been compiled!\n"
 
-bonus: makelib $(BNUS)
+$(NAME)::
+	@printf "\t$(WHITE)Nothing more to be done for program \033[1;31mPush Swap\n"
 
-$(BNUS): $(OBJS_BNUS)
-	@$(CC) $(CFLAGS) $(XFLAGS) $(OBJS_BNUS) $(LIBS) -o $(BNUS)
+extra:
+	@$(MAKE) -C $(LIB_DIR)
+	@$(MAKE) $(CHKR)
+
+$(CHKR):: $(OBJS_CHKR)
+	@$(CC) $(CFLAGS) $(XFLAGS) $(OBJS_CHKR) $(LIBS) -o $(CHKR)
 	@printf "\r\n\t$(WHITE)Program \033[1;31mChecker $(WHITE)has been compiled!\n"
 
-makelib:
-	@make -C $(LIB_DIR)
+$(CHKR)::
+	@printf "\t$(WHITE)Nothing more to be done for program \033[1;31mChecker\n"
 
 clean:
-	@make clean -C $(LIB_DIR)
-	@$(RM) -r $(OBJ_DIR) $(BNS_DIR)$(OBJ_DIR)
+	@$(MAKE) clean -C $(LIB_DIR)
+	@$(RM) -r $(OBJ_DIR)
 	@echo ""
 	@echo "	$(WHITE)All objects and dependencies removed for \033[1;31mPush Swap.$(DEF_COLOR)"
 
-fclean:	clean
-	@make fclean -C $(LIB_DIR)
-	@$(RM) $(NAME) $(BNUS)
+fclean:
+	@$(MAKE) fclean -C $(LIB_DIR)
+	@$(MAKE) clean
+	@$(RM) $(NAME) $(CHKR)
 	@echo ""
 	@echo "	$(WHITE)All objects, dependencies and executables removed for \033[1;31mPush Swap.$(DEF_COLOR)"
 
-re:	fclean	all
+re:
+	@$(MAKE) fclean
+	@$(MAKE) all
 
 -include $(DEPS)
--include $(DEPS_BNUS)
+-include $(DEPS_CHKR)
 
-.PHONY:	all clean fclean re makelibs bonus
+.PHONY:	all clean fclean re extra

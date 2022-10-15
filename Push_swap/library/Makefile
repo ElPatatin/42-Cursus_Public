@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/10/07 06:49:56 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/15 10:05:02 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,39 +35,43 @@ FUNGNL	= $(GNL_DIR)libgnl.a
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-all: makelibft makeprintf makegnl
+all:
+	@$(MAKE) -C $(LIB_DIR)
+	@$(CP) $(LIBFT) ./$(NAME)
+	@$(MAKE) -C $(PNT_DIR)
+	@$(CP) $(PRINTF) ./$(NAME)
+	@$(MAKE) -C $(GNL_DIR)
+	@$(CP) $(FUNGNL) ./$(NAME)
 
-libft: makelibft
-
-printf: makelibft makeprintf
-
-gnl: makelibft makegnl
-
-#-=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=- #
-
-makelibft:
-	@make -C $(LIB_DIR)
+libft:
+	@$(MAKE) -C $(LIB_DIR)
 	@$(CP) $(LIBFT) ./$(NAME)
 
-makeprintf:
-	@make -C $(PNT_DIR)
+
+printf:
+	@$(MAKE) libft
+	@$(MAKE) -C $(PNT_DIR)
 	@$(CP) $(PRINTF) ./$(NAME)
 
-makegnl:
-	@make -C $(GNL_DIR)
+gnl:
+	@$(MAKE) libft
+	@$(MAKE) -C $(GNL_DIR)
 	@$(CP) $(FUNGNL) ./$(NAME)
 
 clean:
-	@make clean -C $(LIB_DIR)
-	@make clean -C $(PNT_DIR)
-	@make clean -C $(GNL_DIR)
+	@$(MAKE) clean -C $(LIB_DIR)
+	@$(MAKE) clean -C $(PNT_DIR)
+	@$(MAKE) clean -C $(GNL_DIR)
 
-fclean: clean
+fclean:
+	@$(MAKE) clean
 	@$(RM) $(NAME) ./*.out
-	@make fclean -C $(LIB_DIR)
-	@make fclean -C $(PNT_DIR)
-	@make fclean -C $(GNL_DIR)
+	@$(MAKE) fclean -C $(LIB_DIR)
+	@$(MAKE) fclean -C $(PNT_DIR)
+	@$(MAKE) fclean -C $(GNL_DIR)
 
-re: fclean all
+re:
+	@$(MAKE) fclean
+	@$(MAKE) all
 
 .PHONY:	all libft printf gnl clean fclean re

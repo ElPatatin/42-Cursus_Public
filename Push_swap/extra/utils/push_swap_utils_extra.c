@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils_bonus.c                            :+:      :+:    :+:   */
+/*   push_swap_utils_extra.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:01:11 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/05 16:13:15 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/15 10:20:09 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap_bonus.h"
-#include "../inc/moves_bonus.h"
+#include "../inc/push_swap_extra.h"
+#include "../inc/moves_extra.h"
 
 int
 	ft_issorted(t_elems *lst)

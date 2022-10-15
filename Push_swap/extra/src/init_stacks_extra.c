@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stacks_bonus.c                                :+:      :+:    :+:   */
+/*   init_stacks_extra.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 15:41:40 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/05 14:01:38 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/15 10:18:06 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap_bonus.h"
+#include "../inc/push_swap_extra.h"
 
 t_elems
 	*ft_newnode(int nbr)
