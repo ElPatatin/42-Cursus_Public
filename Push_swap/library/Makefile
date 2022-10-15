@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/10/15 10:05:02 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/15 10:44:02 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,12 +36,9 @@ FUNGNL	= $(GNL_DIR)libgnl.a
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 all:
-	@$(MAKE) -C $(LIB_DIR)
-	@$(CP) $(LIBFT) ./$(NAME)
-	@$(MAKE) -C $(PNT_DIR)
-	@$(CP) $(PRINTF) ./$(NAME)
-	@$(MAKE) -C $(GNL_DIR)
-	@$(CP) $(FUNGNL) ./$(NAME)
+	@$(MAKE) libft
+	@$(MAKE) printf
+	@$(MAKE) gnl
 
 libft:
 	@$(MAKE) -C $(LIB_DIR)
@@ -49,12 +46,10 @@ libft:
 
 
 printf:
-	@$(MAKE) libft
 	@$(MAKE) -C $(PNT_DIR)
 	@$(CP) $(PRINTF) ./$(NAME)
 
 gnl:
-	@$(MAKE) libft
 	@$(MAKE) -C $(GNL_DIR)
 	@$(CP) $(FUNGNL) ./$(NAME)
 
