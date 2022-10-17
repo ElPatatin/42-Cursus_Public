@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/10 19:49:08 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/10/15 10:26:45 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/15 11:48:28 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -137,8 +137,8 @@ clean:
 	@echo "	$(WHITE)All objects and dependencies removed for \033[1;31mPush Swap.$(DEF_COLOR)"
 
 fclean:
-	@$(MAKE) fclean -C $(LIB_DIR)
 	@$(MAKE) clean
+	@$(MAKE) fclean -C $(LIB_DIR)
 	@$(RM) $(NAME) $(CHKR)
 	@echo ""
 	@echo "	$(WHITE)All objects, dependencies and executables removed for \033[1;31mPush Swap.$(DEF_COLOR)"
