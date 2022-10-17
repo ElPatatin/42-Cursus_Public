@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:24:50 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/17 16:19:56 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/17 18:28:38 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 # include "../library/libft/inc/libft.h"
 # include "../library/ft_printf/inc/ft_printf.h"
 # include "../library/ft_gnl/inc/libgnl.h"
-
-// Validation messages
-# define VLD_MSG1	(char *)"Bit recibed.\n"
-# define VLD_MSG2	(char *)"Message recibed.\n"
 
 // Error Codes
 # define ERRCODE0	(int)0

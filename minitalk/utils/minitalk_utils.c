@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:29:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/17 16:43:14 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/17 18:39:48 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void	ft_error_handler(int i)
 {
 	if (i == ERRCODE0)
-		write(STDEERR_FILENO, ERR_MSG0, sizeof(char) * ft_strlen(ERR_MSG0));
+		write(STDERR_FILENO, ERR_MSG, sizeof(char) * ft_strlen(ERR_MSG));
 	else if (i == ERRCODE1)
-		write(STDEERR_FILENO, ERR_MSG1, sizeof(char) * ft_strlen(ERR_MSG1));
+		write(STDERR_FILENO, ERR_MSG1, sizeof(char) * ft_strlen(ERR_MSG1));
 	else if (i == ERRCODE2)
-		write(STDEERR_FILENO, ERR_MSG2, sizeof(char) * ft_strlen(ERR_MSG2));
+		write(STDERR_FILENO, ERR_MSG2, sizeof(char) * ft_strlen(ERR_MSG2));
 	else if (i == ERRCODE3)
-		write(STDEERR_FILENO, ERR_MSG3, sizeof(char) * ft_strlen(ERR_MSG3));
+		write(STDERR_FILENO, ERR_MSG3, sizeof(char) * ft_strlen(ERR_MSG3));
 	else if (i == ERRCODE4)
-		write(STDEERR_FILENO, ERR_MSG4, sizeof(char) * ft_strlen(ERR_MSG4));
+		write(STDERR_FILENO, ERR_MSG4, sizeof(char) * ft_strlen(ERR_MSG4));
 	else if (i == ERRCODE5)
-		write(STDEERR_FILENO, ERR_MSG5, sizeof(char) * ft_strlen(ERR_MSG5));
+		write(STDERR_FILENO, ERR_MSG5, sizeof(char) * ft_strlen(ERR_MSG5));
 	exit(EXIT_FAILURE);
 }
 
@@ -42,14 +42,17 @@ int	ft_str_isdigit(char *str)
 
 void	ft_handler(int sig)
 {
+	static long	count = 0;
+
 	if (sig == SIGUSR1)
 	{
-		usleep(50);
-		ft_printf("%s", VLD_MSG1);
+		++count;
+		usleep(10);
+		ft_printf("\r\033[1;36mBit \033[1;31m[%d] \033[1;36mconfirmed.", count);
 	}
 	else if (sig == SIGUSR2)
 	{
-		ft_printf("%s", VLD_MSG2);
+		ft_printf("\r\033[1;36mTotal bits confirmed \033[1;31m[%d].\n", count);
 		exit (EXIT_SUCCESS);
 	}
 }
