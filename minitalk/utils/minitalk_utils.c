@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:29:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/09/30 16:45:12 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/17 16:43:14 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void	ft_error_handler(int i)
 {
 	if (i == ERRCODE0)
-		ft_printf("%s", ERR_MSG);
+		write(STDEERR_FILENO, ERR_MSG0, sizeof(char) * ft_strlen(ERR_MSG0));
 	else if (i == ERRCODE1)
-		ft_printf("%s", ERR_MSG1);
+		write(STDEERR_FILENO, ERR_MSG1, sizeof(char) * ft_strlen(ERR_MSG1));
 	else if (i == ERRCODE2)
-		ft_printf("%s", ERR_MSG2);
+		write(STDEERR_FILENO, ERR_MSG2, sizeof(char) * ft_strlen(ERR_MSG2));
 	else if (i == ERRCODE3)
-		ft_printf("%s", ERR_MSG3);
+		write(STDEERR_FILENO, ERR_MSG3, sizeof(char) * ft_strlen(ERR_MSG3));
 	else if (i == ERRCODE4)
-		ft_printf("%s", ERR_MSG4);
+		write(STDEERR_FILENO, ERR_MSG4, sizeof(char) * ft_strlen(ERR_MSG4));
 	else if (i == ERRCODE5)
-		ft_printf("%s", ERR_MSG5);
+		write(STDEERR_FILENO, ERR_MSG5, sizeof(char) * ft_strlen(ERR_MSG5));
 	exit(EXIT_FAILURE);
 }
 
