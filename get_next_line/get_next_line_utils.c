@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:35:24 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/06/11 11:35:28 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/23 20:51:49 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,11 @@ char	*ft_strjoin(char *s1, char *s2)
 	newlen = ft_strlen(s1) + ft_strlen(s2);
 	if (!s1)
 	{
-		s1 = malloc(sizeof(char) * 1);
+		s1 = ft_strdup("");
 		if (!s1)
 			return (NULL);
-		s1[0] = '\0';
 	}	
-	new = (char *)malloc(sizeof(char) * (newlen + 1));
+	new = (char *)malloc(sizeof(char) * newlen + 1);
 	if (!new)
 		return (NULL);
 	i = -1;
@@ -64,7 +63,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[++j])
 		new[i + j] = s2[j];
 	new[i + j] = '\0';
-	free(s1);
+	ft_clean_line(&s1);
 	return (new);
 }
 
