@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:58:10 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/17 16:19:13 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/18 16:21:15 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,15 @@ int	main(int ac, char **av)
 		ft_error_handler(ERRCODE2);
 	else if ((ft_strlen(av[1]) <= 4) && (ft_strlen(av[1]) >= 5))
 		ft_error_handler(ERRCODE2);
-	line = get_next_line(0);
+	line = get_next_line(STDIN_FILENO);
 	signal(SIGUSR1, &ft_handler);
 	signal(SIGUSR2, &ft_handler);
 	while (line)
 	{
 		ft_send_message(ft_atoi(av[1]), line);
+		ft_printf("\n");
 		free(line);
-		line = get_next_line(0);
+		line = get_next_line(STDIN_FILENO);
 	}
 	free(line);
 	ft_message_handler(ft_atoi(av[1]), '\0');

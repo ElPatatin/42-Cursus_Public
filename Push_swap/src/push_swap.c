@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:00:48 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 10:20:50 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/10 20:57:40 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int	main(int ac, char **av)
 	t_stack	b;
 
 	if (ac <= 1)
-		return (0);
+		return (1);
 	ft_check_valid_params(ac, av);
 	ft_init_stack_a(&a, ac, av);
 	ft_init_stack_b(&b);
 	ft_indexer(&a);
 	ft_check_sort(&a, &b);
-	ft_stackclear(&a);
-	ft_stackclear(&b);
+	ft_stack_clear(&a);
+	ft_stack_clear(&b);
 	return (0);
 }
 

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   errors_extra.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 16:18:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/15 10:20:21 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/10 20:57:52 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap_extra.h"
 
 void
-	ft_stackclear(t_stack *stack)
+	ft_stack_clear(t_stack *stack)
 {
 	t_elems	*tmp;
 
@@ -29,12 +29,12 @@ void
 }
 
 void
-	ft_cleanstacks(t_stack *a, t_stack *b)
+	ft_clean_stacks(t_stack *a, t_stack *b)
 {
 	if (a != NULL)
-		ft_stackclear(a);
+		ft_stack_clear(a);
 	if (b != NULL)
-		ft_stackclear(b);
+		ft_stack_clear(b);
 	ft_error(ERRCODE3);
 }
 
@@ -43,8 +43,8 @@ void
 {
 	free(*line);
 	line = NULL;
-	ft_stackclear(a);
-	ft_stackclear(b);
+	ft_stack_clear(a);
+	ft_stack_clear(b);
 	ft_error(ERRCODE0);
 }
 

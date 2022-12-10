@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rrotate.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:40:11 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/05 16:59:11 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/10 20:57:52 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void
 	{
 		ft_rrotate_stack(a);
 		if (ft_printf("%s", INS_RRA) == ERR_NUM)
-			ft_cleanstacks(a, NULL);
+			ft_clean_stacks(a, NULL);
 	}
 }
 
@@ -47,7 +47,7 @@ void
 	{
 		ft_rrotate_stack(b);
 		if (ft_printf("%s", INS_RRB) == ERR_NUM)
-			ft_cleanstacks(NULL, b);
+			ft_clean_stacks(NULL, b);
 	}
 }
 
@@ -59,6 +59,6 @@ void
 		ft_rrotate_stack(a);
 		ft_rrotate_stack(b);
 		if (ft_printf("%s", INS_RRR) == ERR_NUM)
-			ft_cleanstacks(a, b);
+			ft_clean_stacks(a, b);
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:24:50 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/17 18:28:38 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:41:55 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include "../library/libft/inc/libft.h"
 # include "../library/ft_printf/inc/ft_printf.h"
 # include "../library/ft_gnl/inc/libgnl.h"
+
+# define UNUSED		(void)
 
 // Error Codes
 # define ERRCODE0	(int)0

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:25:38 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/17 18:33:24 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:40:29 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,13 @@ void	ft_message_handler(int signum, siginfo_t *siginfo, void *unused)
 	}
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	struct sigaction	catch;
 
+	UNUSED(av);
+	if (ac > 1)
+		return (1);
 	ft_print_pid();
 	catch.sa_flags = SA_SIGINFO;
 	catch.sa_sigaction = ft_message_handler;

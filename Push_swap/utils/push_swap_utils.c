@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:01:11 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/09 00:25:01 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/10 20:53:07 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,6 @@ int
 		str++;
 	}
 	return (1);
-}
-
-void
-	ft_check_node(t_elems *lst, t_stack *stack)
-{
-	if (!lst)
-		ft_stackclear(stack);
 }
 
 ssize_t

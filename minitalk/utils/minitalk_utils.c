@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:29:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/17 18:39:48 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:41:21 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ void	ft_handler(int sig)
 	{
 		++count;
 		usleep(10);
-		ft_printf("\r\033[1;36mBit \033[1;31m[%d] \033[1;36mconfirmed.", count);
+		ft_printf("\r\033[1;36mBit \033[1;31m[%d] \033[1;36mconfirmed.\033[0;39m", count);
 	}
 	else if (sig == SIGUSR2)
 	{
-		ft_printf("\r\033[1;36mTotal bits confirmed \033[1;31m[%d].\n", count);
+		ft_printf("\r\033[1;36mTotal bits confirmed \033[1;31m[%d].\n\033[0;39m", count);
 		exit (EXIT_SUCCESS);
 	}
 }

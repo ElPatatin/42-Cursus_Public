@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:40:35 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/05 16:57:51 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/10 20:57:52 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void
 {
 	ft_stack_swap(a);
 	if (ft_printf("%s", INS_SA) == ERR_NUM)
-		ft_cleanstacks(a, NULL);
+		ft_clean_stacks(a, NULL);
 }
 
 void
@@ -50,7 +50,7 @@ void
 {
 	ft_stack_swap(b);
 	if (ft_printf("%s", INS_SB) == ERR_NUM)
-		ft_cleanstacks(b, NULL);
+		ft_clean_stacks(b, NULL);
 }
 
 void
@@ -61,6 +61,6 @@ void
 		ft_stack_swap(a);
 		ft_stack_swap(b);
 		if (ft_printf("%s", INS_SS) == ERR_NUM)
-			ft_cleanstacks(a, b);
+			ft_clean_stacks(a, b);
 	}
 }

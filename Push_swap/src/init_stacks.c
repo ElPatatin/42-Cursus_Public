@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 15:41:40 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 09:42:58 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/10 20:56:17 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,18 @@ void
 	while (++a->len < nbr - 1)
 	{
 		lst = ft_newnode(ft_atoi(str[a->len + 1]));
-		ft_check_node(lst, a);
+		if (!lst)
+			ft_clean_list_creation(a);
 		if (!a->last)
 		{
 			a->first = lst;
 			a->last = lst;
+			continue ;
 		}
-		else
-		{
-			tmp = a->last;
-			a->last = lst;
-			tmp->next = a->last;
-			a->last->back = tmp;
-		}
+		tmp = a->last;
+		a->last = lst;
+		tmp->next = a->last;
+		a->last->back = tmp;
 	}
 }
 
@@ -69,22 +68,22 @@ void
 {
 	t_elems	*tmp;
 	t_elems	*current;
-	ssize_t	idx1;
-	ssize_t	idx2;
+	ssize_t	idx;
+	ssize_t	count;
 
 	current = stack->first;
-	idx2 = -1;
-	while (++idx2 < stack->len)
+	count = -1;
+	while (++count < stack->len)
 	{
-		idx1 = 0;
+		idx = 0;
 		tmp = stack->first;
 		while (tmp)
 		{
-			if (tmp->val < current->val)
-				idx1++;
+			if (current->val > tmp->val)
+				idx++;
 			tmp = tmp->next;
 		}
-		current->idx = idx1;
+		current->idx = idx;
 		current = current->next;
 	}
 }

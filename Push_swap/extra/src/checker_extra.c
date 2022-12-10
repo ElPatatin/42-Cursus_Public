@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_extra.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 15:43:19 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/15 10:21:13 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/10 20:57:40 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	main(int ac, char **av)
 	}
 	else
 		ft_printf("%s", INVALID);
-	ft_stackclear(&a);
-	ft_stackclear(&b);
+	ft_stack_clear(&a);
+	ft_stack_clear(&b);
 	return (0);
 }
 

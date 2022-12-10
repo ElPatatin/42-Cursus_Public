@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:00:33 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/09 00:23:44 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/10 20:57:52 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ void	ft_sort_bigger(t_stack *a, t_stack *b, int chunks);
 
 // Error Functions
 void	ft_error(int num);
-void	ft_stackclear(t_stack *stack);
-void	ft_cleanstacks(t_stack *a, t_stack *b);
+void	ft_stack_clear(t_stack *stack);
+void	ft_clean_list_creation(t_stack *a);
+void	ft_clean_stacks(t_stack *a, t_stack *b);
 
 #endif

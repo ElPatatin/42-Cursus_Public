@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:40:29 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/02 16:54:48 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/10 20:57:52 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void
 		return ;
 	ft_stack_push(a, b);
 	if (ft_printf("%s", INS_PA) == ERR_NUM)
-		ft_cleanstacks(a, b);
+		ft_clean_stacks(a, b);
 }
 
 void
@@ -75,5 +75,5 @@ void
 		return ;
 	ft_stack_push(b, a);
 	if (ft_printf("%s", INS_PB) == ERR_NUM)
-		ft_cleanstacks(a, b);
+		ft_clean_stacks(a, b);
 }
