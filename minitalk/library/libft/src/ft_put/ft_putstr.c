@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:54:30 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:44 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:48:07 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_putstr(char	*str)
+int
+	ft_putstr(char	*str)
 {
 	unsigned int	i;
 
@@ -24,7 +25,7 @@ int	ft_putstr(char	*str)
 		return (6);
 	}
 	while (str[i])
-		if (write(STDOUT_FILENO, &str[i++], sizeof(char)) != sizeof (char))
+		if (write(STDOUT_FILENO, &str[i++], sizeof(char)) < 0)
 			return (-1);
 	return (ft_strlen(str));
 }

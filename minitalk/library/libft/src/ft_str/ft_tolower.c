@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:52:30 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:32:25 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:54:06 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_tolower(int c)
+int
+	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c += 32;

@@ -3,28 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:11:05 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:29:46 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:45:57 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void
+	*ft_calloc(size_t count, size_t size)
 {
-	char	*ptr;
-	size_t	i;
+	void	*ptr;
 
-	i = 0;
-	ptr = (char *)malloc(count * size);
+	ptr = (void *)malloc(count * size);
 	if (!ptr)
 		return (NULL);
-	while (i < (count * size))
-	{
-		ptr[i] = 0;
-		i++;
-	}
+	ft_bzero(ptr, count * size);
 	return (ptr);
 }

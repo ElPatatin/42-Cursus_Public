@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:48:45 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:31:35 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:52:26 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-char	*ft_strcapitalize(char *str)
+char
+	*ft_strcapitalize(char *str)
 {
 	char	*start;
 

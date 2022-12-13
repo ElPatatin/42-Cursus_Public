@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:35:34 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/23 21:17:23 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/11/29 17:09:32 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,5 @@ void
 {
 	free(*line);
 	*line = NULL;
-	line = NULL;
 	return (NULL);
 }

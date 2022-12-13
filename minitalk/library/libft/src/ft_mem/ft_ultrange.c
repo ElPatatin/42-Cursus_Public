@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ultrange.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:14:20 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:20 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:46:28 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_ultrange(int **range, int min, int max)
+int
+	ft_ultrange(int **range, int min, int max)
 {
 	int	i;
 	int	*tab;

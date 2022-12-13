@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:13:19 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:02 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:46:16 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void
+	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	count;
 

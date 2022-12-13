@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:52:38 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:32:29 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:54:43 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_toupper(int c)
+int
+	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c -= 32;

@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:10:58 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:29:43 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:45:53 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void
+	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;
 

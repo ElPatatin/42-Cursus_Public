@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:45:01 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:31:26 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:51:04 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-void	ft_swap(int *a, int *b)
+void
+	ft_swap(int *a, int *b)
 {
 	int	tmp;
 

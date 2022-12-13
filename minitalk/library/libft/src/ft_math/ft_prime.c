@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_prime.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 20:11:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:29:30 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:35:45 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_prime(int nb)
+int
+	ft_prime(int nb)
 {
 	int	i;
 	int	n;
@@ -21,14 +22,13 @@ int	ft_prime(int nb)
 	n = 1;
 	if (nb <= 1)
 		n = 0;
-	while (i <= (nb / 2))
+	while (i++ <= (nb / 2))
 	{
 		if ((nb % i) == 0)
 		{
 			n = 0;
 			break ;
 		}
-		i++;
 	}
 	return (n);
 }

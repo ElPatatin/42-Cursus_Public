@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:51:24 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:32:06 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:53:16 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int
+	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 

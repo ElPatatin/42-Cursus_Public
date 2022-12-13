@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:52:12 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:32:19 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:53:48 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-char	*ft_strupcase(char	*str)
+char
+	*ft_strupcase(char	*str)
 {
 	int	i;
 

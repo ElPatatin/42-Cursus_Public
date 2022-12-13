@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:51:50 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:32:12 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:53:24 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char
+	*ft_strrchr(const char *s, int c)
 {
 	int	len;
 

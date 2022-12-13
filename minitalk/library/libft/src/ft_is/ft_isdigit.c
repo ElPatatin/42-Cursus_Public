@@ -3,24 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 13:06:40 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:28:38 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:43:57 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_isdigit(int c)
+t_bool
+	ft_isdigit(int c)
 {
-	if (!((c >= '0') && (c <= '9')))
-		return (0);
-	return (1);
+	if (c >= '0' && c <= '9')
+		return (TRUE);
+	return (FALSE);
 }
-
-/*										*/
-/*	Esta función revisa si el carácter que le pasamos esta dentro del	*/
-/*	alfabeto de números. Si el parámetro pasado esta fuera del rango de-	*/
-/*	signado de la función, el valor a devolver es 0 o NULL.			*/
-/*										*/

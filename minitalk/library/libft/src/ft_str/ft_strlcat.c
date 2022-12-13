@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:49:46 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:31:53 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:52:53 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
+size_t
+	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
 	t_unt	src_s;
 	t_unt	dest_s;

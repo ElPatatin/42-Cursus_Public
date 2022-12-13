@@ -3,67 +3,66 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
+#    By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/09/04 18:16:35 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/12/07 16:57:34 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
-
-NAME	=	lib.a
-
 # -=-=-=-=-	CMND -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-CFLAGS		= -Wall -Werror -Wextra
-AR		= ar -rcs
+CFLAGS	= -Wall -Werror -Wextra
 RM		= rm -f
-MD		= mkdir -p
 CP		= cp -f
-MV		= mv -f
 
 # -=-=-=-=-	PATH -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 LIBRARY	= library/
 LIB_DIR	= libft/
-PNT_DIR	= ft_printf/
-GNL_DIR	= ft_gnl/
+PNT_DIR	= liboutput/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-LIBFT	= $(LIB_DIR)libft.a
-PRINTF	= $(PRN_DIR)libprintf.a
-FUNGNL	= $(GNL_DIR)libgnl.a
+LIB_NAME	= libft.a
+OUT_NAME	= liboutput.a
+
+LIBFT	= $(LIB_DIR)$(LIB_NAME)
+PRINT	= $(PNT_DIR)$(OUT_NAME)
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-all: makelibft makeprintf makegnl
-	@$(CP) $(FUNGNL) ./$(NAME)
+all:
+	@$(MAKE) makelibft
+	@$(MAKE) makeprint
+
+libft:
+	@$(MAKE) makelibft
+
+print:
+	@$(MAKE)makeprint
 
 #-=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=- #
 
 makelibft:
-	@make -C $(LIB_DIR)
+	@$(MAKE) -C $(LIB_DIR)
+	@$(CP) $(LIBFT) ./
 
-makeprintf:
-	@make -C $(PNT_DIR)
-
-makegnl:
-	@make -C $(GNL_DIR)
+makeprint:
+	@$(MAKE) -C $(PNT_DIR)
+	@$(CP) $(PRINT) ./
 
 clean:
-	@$(RM) -r $(OBJ_DIR)
-	@make clean -C $(LIB_DIR)
-	@make clean -C $(PNT_DIR)
-	@make clean -C $(GNL_DIR)
+	@$(MAKE) clean -C $(LIB_DIR)
+	@$(MAKE) clean -C $(PNT_DIR)
 
-fclean: clean
-	@$(RM) $(NAME) ./*.out
-	@make fclean -C $(LIB_DIR)
-	@make fclean -C $(PNT_DIR)
-	@make fclean -C $(GNL_DIR)
+fclean:
+	@$(RM) $(LIB_NAME) $(OUT_NAME) ./*.out
+	@$(MAKE) fclean -C $(LIB_DIR)
+	@$(MAKE) fclean -C $(PNT_DIR)
 
-re: fclean all
+re:
+	@$(MAKE) fclean
+	@$(MAKE)
 
-.PHONY:	all libft lists printf gnl clean fclean re
+.PHONY:	all libft printf gnl clean fclean re

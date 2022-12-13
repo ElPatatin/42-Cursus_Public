@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
+#    By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 18:26:09 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/10/17 16:20:45 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/12/13 19:19:47 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,11 +47,13 @@ OBJ_DIR	= obj/
 INC_DIR	= inc/
 LIB_DIR	= library/
 
+LFT_DIR	= libft/
+OUT_DIR	= liboutput/
+
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-LIBS	= $(LIB_DIR)lib.a
-INCLUDE	= -I $(INC_DIR)
-HDRS	= $(INC_DIR)minitalk.h
+LIBS	= $(LIB_DIR)libft.a $(LIB_DIR)liboutput.a 
+INCLUDE	= -I$(INC_DIR) -I$(LIB_DIR)$(LFT_DIR)$(INC_DIR) -I$(LIB_DIR)$(OUT_DIR)$(INC_DIR)
 
 CLI_SRC	= client.c
 CL2_SRC	= client2.c

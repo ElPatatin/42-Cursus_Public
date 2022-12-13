@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:11:35 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:29:53 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:46:10 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int
+	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*ps1;
 	unsigned char	*ps2;

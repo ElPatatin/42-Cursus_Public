@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:43:47 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:53 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:49:44 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_any(char **tab, int (*f)(char *))
+int
+	ft_any(char **tab, int (*f)(char *))
 {
 	while (*tab)
 	{

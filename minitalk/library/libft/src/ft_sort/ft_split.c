@@ -3,43 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:44:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:31:16 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 21:02:54 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-static char	**ft_mem_alloc(char const *s, char c)
-{
-	char	**sptr;
-	int		i;
-	int		j;
-	int		idx;
+static char	**ft_mem_alloc(char const *s, char c);
 
-	sptr = (char **)malloc(sizeof(char *) * (ft_str_wcount(s, c) + 1));
-	if (!sptr)
-		return (NULL);
-	i = -1;
-	j = 0;
-	while (++i < ft_str_wcount(s, c))
-	{
-		idx = 0;
-		while (s[j] == c)
-			j++;
-		while ((s[j] && s[j] != c)
-			&& ((j == 0 && s[j] != c) || (s[j] != c)) && idx++ != -1)
-			j++;
-		sptr[i] = (char *)malloc(sizeof(char) * (idx + 1));
-		if (!sptr[i])
-			return (ft_memfree(sptr, i));
-	}
-	return (sptr);
-}
-
-char	**ft_split(char const *s, char c)
+char
+	**ft_split(char const *s, char c)
 {
 	char	**ptr;
 	int		i;
@@ -66,4 +42,32 @@ char	**ft_split(char const *s, char c)
 	}
 	ptr[i] = NULL;
 	return (ptr);
+}
+
+static char
+	**ft_mem_alloc(char const *s, char c)
+{
+	char	**sptr;
+	int		i;
+	int		j;
+	int		idx;
+
+	sptr = (char **)malloc(sizeof(char *) * (ft_str_wcount(s, c) + 1));
+	if (!sptr)
+		return (NULL);
+	i = -1;
+	j = 0;
+	while (++i < ft_str_wcount(s, c))
+	{
+		idx = 0;
+		while (s[j] == c)
+			j++;
+		while ((s[j] && s[j] != c)
+			&& ((j == 0 && s[j] != c) || (s[j] != c)) && idx++ != -1)
+			j++;
+		sptr[i] = (char *)malloc(sizeof(char) * (idx + 1));
+		if (!sptr[i])
+			return (ft_memfree(sptr, i));
+	}
+	return (sptr);
 }

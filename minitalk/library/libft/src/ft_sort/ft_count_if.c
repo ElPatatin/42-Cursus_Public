@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:43:52 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:55 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:50:00 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_count_if(char **tab, int lenght, int (*f)(char *))
+int
+	ft_count_if(char **tab, int lenght, int (*f)(char *))
 {
 	unsigned int	cnt;
 	ssize_t			i;

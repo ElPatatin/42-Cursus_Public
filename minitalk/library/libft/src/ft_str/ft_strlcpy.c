@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:50:34 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/28 19:13:41 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:52:57 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, ssize_t dstsize)
+size_t
+	ft_strlcpy(char *dst, const char *src, ssize_t dstsize)
 {
 	ssize_t	i;
 	t_unt	len;

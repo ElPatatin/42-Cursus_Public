@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:43:57 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:58 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:50:06 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-void	ft_foreach(int *tab, int length, void (*f)(int))
+void
+	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	ssize_t	i;
 

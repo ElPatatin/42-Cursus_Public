@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:53:52 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:25 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:47:14 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_putchar_fd(int c, int fd)
+int
+	ft_putchar_fd(int c, int fd)
 {
-	if (write(fd, &c, sizeof(char)) != sizeof(char))
+	if (write(fd, &c, sizeof(char)) < 0)
 		return (-1);
 	return (1);
 }

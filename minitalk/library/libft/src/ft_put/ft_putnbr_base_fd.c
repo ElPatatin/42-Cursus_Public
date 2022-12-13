@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:54:14 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:30:28 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:49:02 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_putnbr_base_fd(t_ll nbr, int base, int fd)
+int
+	ft_putnbr_base_fd(t_ll nbr, int base, int fd)
 {
 	char	*str;
 
@@ -21,7 +22,7 @@ int	ft_putnbr_base_fd(t_ll nbr, int base, int fd)
 	{
 		if (base <= 10)
 		{
-			if (write(fd, "-", sizeof(char)) != sizeof(char))
+			if (write(fd, "-", sizeof(char)) < 0)
 				return (-1);
 			ft_absval(nbr);
 		}
@@ -31,7 +32,7 @@ int	ft_putnbr_base_fd(t_ll nbr, int base, int fd)
 	if (nbr >= base)
 		if (ft_putnbr_base_fd(nbr / base, base, fd) == -1)
 			return (-1);
-	if (write(fd, &str[nbr % base], sizeof(char)) != sizeof(char))
+	if (write(fd, &str[nbr % base], sizeof(char)) < 0)
 		return (-1);
 	return (0);
 }

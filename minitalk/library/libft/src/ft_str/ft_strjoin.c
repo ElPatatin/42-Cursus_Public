@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:49:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/17 16:19:50 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/13 19:12:50 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char
+	*ft_strjoin(char *s1, char *s2)
 {
 	int		i;
 	int		j;
@@ -22,12 +23,11 @@ char	*ft_strjoin(char *s1, char *s2)
 	newlen = ft_strlen(s1) + ft_strlen(s2);
 	if (!s1)
 	{
-		s1 = malloc(sizeof(char) * 1);
+		s1 = ft_strdup("");
 		if (!s1)
 			return (NULL);
-		s1[0] = '\0';
 	}	
-	new = (char *)malloc(sizeof(char) * (newlen + 1));
+	new = (char *)ft_calloc((newlen + 1), sizeof(char));
 	if (!new)
 		return (NULL);
 	i = -1;
@@ -36,7 +36,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		new[i] = s1[i];
 	while (s2[++j])
 		new[i + j] = s2[j];
-	new[i + j] = '\0';
 	free(s1);
+	s1 = NULL;
 	return (new);
 }

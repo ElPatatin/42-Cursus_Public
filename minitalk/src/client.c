@@ -3,40 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:25:23 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/17 16:10:57 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/13 19:21:18 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minitalk.h"
+#include "minitalk.h"
 
-void	ft_message_handler(int pid, unsigned char msg)
+void	ft_send_message(int pid, char *msg);
+void	ft_message_handler(int pid, unsigned char msg);
+
+int	main(int ac, char **av)
 {
-	t_unt	count;
-
-	count = 1 << 7;
-	while (count)
-	{
-		if (msg & count)
-		{
-			if (kill(pid, SIGUSR1) == -1)
-				ft_error_handler(ERRCODE0);
-			pause();
-		}
-		else
-		{
-			if (kill(pid, SIGUSR2) == -1)
-				ft_error_handler(ERRCODE0);
-			pause();
-		}
-		usleep(150);
-		count >>= 1;
-	}
+	if (ac != 3)
+		error_handler(ERRCODE1);
+	else if (!ft_str_isdigit(av[1]))
+		error_handler(ERRCODE2);
+	else if ((ft_strlen(av[1]) <= 4) && (ft_strlen(av[1]) >= 5))
+		error_handler(ERRCODE2);
+	signal(SIGUSR1, &ft_handler);
+	signal(SIGUSR2, &ft_handler);
+	ft_send_message(ft_atoi(av[1]), av[2]);
+	while (TRUE)
+		pause();
+	return (0);
 }
 
-void	ft_send_message(int pid, char *msg)
+void
+	ft_send_message(int pid, char *msg)
 {
 	char	*newline;
 	ssize_t	i;
@@ -51,18 +47,27 @@ void	ft_send_message(int pid, char *msg)
 	ft_message_handler(pid, '\0');
 }
 
-int	main(int ac, char **av)
+void
+	ft_message_handler(int pid, unsigned char msg)
 {
-	if (ac != 3)
-		ft_error_handler(ERRCODE1);
-	else if (!ft_str_isdigit(av[1]))
-		ft_error_handler(ERRCODE2);
-	else if ((ft_strlen(av[1]) <= 4) && (ft_strlen(av[1]) >= 5))
-		ft_error_handler(ERRCODE2);
-	signal(SIGUSR1, &ft_handler);
-	signal(SIGUSR2, &ft_handler);
-	ft_send_message(ft_atoi(av[1]), av[2]);
-	while (TRUE)
-		pause();
-	return (0);
+	t_unt	count;
+
+	count = 1 << 7;
+	while (count)
+	{
+		if (msg & count)
+		{
+			if (kill(pid, SIGUSR1) == -1)
+				error_handler(ERRCODE0);
+			pause();
+		}
+		else
+		{
+			if (kill(pid, SIGUSR2) == -1)
+				error_handler(ERRCODE0);
+			pause();
+		}
+		usleep(150);
+		count >>= 1;
+	}
 }

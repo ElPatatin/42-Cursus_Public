@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_wcount.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:48:38 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:31:32 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:52:28 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_str_wcount(char const *s, char c)
+int
+	ft_str_wcount(char const *s, char c)
 {
 	size_t	i;
 	int		nbr_w;
