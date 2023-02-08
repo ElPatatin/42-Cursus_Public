@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:25:38 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/13 19:29:27 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:09:24 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,10 @@ void		ft_message_handler(int signum, siginfo_t *siginfo, void *unused);
 void		aux_message_handler(int signum, siginfo_t *siginfo,
 				char *msg, int *idx);
 
-int	main(int ac, char **av)
+int	main(void)
 {
 	struct sigaction	catch;
 
-	UNUSED(av);
-	if (ac > 1)
-		return (1);
 	ft_print_pid();
 	catch.sa_flags = SA_SIGINFO;
 	catch.sa_sigaction = ft_message_handler;
@@ -56,7 +53,7 @@ void
 	static char	*str = NULL;
 
 	UNUSED(unused);
-	usleep(100);
+	usleep(300);
 	aux_message_handler(signum, siginfo, &msg, &idx);
 	idx++;
 	if (idx == 8)
@@ -85,7 +82,7 @@ void
 		if (kill(siginfo->si_pid, SIGUSR1) == -1)
 			error_handler(ERRCODE0);
 	}
-	else
+	else if (signum == SIGUSR2)
 		if (kill(siginfo->si_pid, SIGUSR1) == -1)
 			error_handler(ERRCODE0);
 }

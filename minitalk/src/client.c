@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:25:23 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/13 19:21:18 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:09:52 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void
 				error_handler(ERRCODE0);
 			pause();
 		}
-		usleep(150);
+		usleep(100);
 		count >>= 1;
 	}
 }
