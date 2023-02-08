@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:25:38 by cpeset-c          #+#    #+#             */
-/*   Updated: 2023/02/06 17:09:24 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2023/02/08 17:57:43 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-static void	ft_print_pid(void);
+static void	print_pid(void);
 void		ft_message_handler(int signum, siginfo_t *siginfo, void *unused);
 void		aux_message_handler(int signum, siginfo_t *siginfo,
 				char *msg, int *idx);
@@ -21,7 +21,7 @@ int	main(void)
 {
 	struct sigaction	catch;
 
-	ft_print_pid();
+	print_pid();
 	catch.sa_flags = SA_SIGINFO;
 	catch.sa_sigaction = ft_message_handler;
 	if ((sigaction(SIGUSR1, &catch, 0)) == -1)
@@ -34,7 +34,7 @@ int	main(void)
 }
 
 static void
-	ft_print_pid(void)
+	print_pid(void)
 {
 	int	pid;
 
@@ -42,7 +42,7 @@ static void
 	if (!pid)
 		error_handler(ERRCODE4);
 	if (ft_printf("Server up and running.\nPID: %d\n", pid) == -1)
-		exit(EXIT_FAILURE);
+		error_handler(ERRCODE0);
 }
 
 void
@@ -53,7 +53,7 @@ void
 	static char	*str = NULL;
 
 	UNUSED(unused);
-	usleep(300);
+	usleep(320);
 	aux_message_handler(signum, siginfo, &msg, &idx);
 	idx++;
 	if (idx == 8)
@@ -63,7 +63,8 @@ void
 			error_buffer(&str);
 		if (msg == '\0')
 		{
-			ft_printf("%s", str);
+			if (ft_printf("%s", str) == -1)
+				error_handler(ERRCODE0);
 			if (kill(siginfo->si_pid, SIGUSR2) == -1)
 				error_handler(ERRCODE0);
 		}

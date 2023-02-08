@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:25:23 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/14 16:09:52 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2023/02/08 17:57:39 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ void
 	ft_send_message(int pid, char *msg)
 {
 	char	*newline;
-	ssize_t	i;
+	ssize_t	idx;
 
 	newline = "\n > ";
-	i = -1;
-	while (newline[++i])
-		ft_message_handler(pid, newline[i]);
-	i = -1;
-	while (msg[++i])
-		ft_message_handler(pid, msg[i]);
+	idx = -1;
+	while (newline[++idx])
+		ft_message_handler(pid, newline[idx]);
+	idx = -1;
+	while (msg[++idx])
+		ft_message_handler(pid, msg[idx]);
 	ft_message_handler(pid, '\0');
 }
 
@@ -67,7 +67,7 @@ void
 				error_handler(ERRCODE0);
 			pause();
 		}
-		usleep(100);
+		usleep(320);
 		count >>= 1;
 	}
 }

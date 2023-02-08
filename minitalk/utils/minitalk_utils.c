@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:29:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/13 19:28:43 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2023/02/08 17:57:41 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,13 @@ void
 	if (sig == SIGUSR1)
 	{
 		++count;
-		usleep(10);
+		usleep(40);
 		ft_printf("%sBit %s[%d] %sconfirmed.%s\r", CYAN, RED, count, CYAN, END);
 	}
 	else if (sig == SIGUSR2)
 	{
+		usleep(160);
 		ft_printf("%sTotal bits confirmed: %s[%d]%s\n", CYAN, RED, count, END);
-		usleep(100);
 		exit (EXIT_SUCCESS);
 	}
 }
